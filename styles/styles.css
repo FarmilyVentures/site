@@ -67,7 +67,7 @@ h4 {
   box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
 
-#about .poloroid p.caption {
+#about .poloroid p#missionCaption {
   font-family: "Permanent Marker", Courier, monospace;
   color: black !important;
   font-size: 16px;
@@ -431,15 +431,9 @@ p .button {
 }
 
 #about {
-  padding: 8px;
-}
-
-#about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   background-color: #353a47;
+  padding: 8px;
+  text-align: center;
 }
 
 #about img {
@@ -465,12 +459,12 @@ p .button {
 
 #about .description {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding: 0;
-  margin: 0 auto;
+  padding: 8px;
+  margin: 24px auto;
   max-width: 900px;
 }
 
@@ -480,10 +474,10 @@ p .button {
   font-weight: 300;
   line-height: 24px;
   font-size: 17px !important;
-  margin-left: 24px;
+  margin-left: 0;
 }
 
-#about .description h3 {
+#about .description .ps h3 {
   color: white;
   margin-top: 24px;
 }
@@ -493,11 +487,15 @@ p .button {
     margin-top: 0;
     margin-left: 24px;
   }
+
+  #about .description p {
+    margin-left: 24px;
+  }
 }
 
 #about .description .ps {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -519,10 +517,14 @@ p .button {
   #about .description p:first-of-type {
     margin-top: 0;
   }
+
+  #about .description .ps {
+    align-items: flex-start;
+  }
 }
 
 .social-links {
-  margin-top: 64px;
+  margin: 32px auto;
   list-style: none;
   padding: 0;
 }
@@ -552,4 +554,5 @@ footer {
   flex-direction: column;
   color: white;
   background: #5ecc62;
+  text-align: center;
 }

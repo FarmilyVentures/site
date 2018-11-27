@@ -7,16 +7,15 @@
 // 2. scroll enablers and disablers
 // 3. consultingPopup opener
 
-function runOtherStartupShit() {
+(function runStartupShit() {
   setMissionImage();
-}
+})();
 
 //
 //
 //
 // 0. event listeners
 (function spawnEventListeners() {
-  runOtherStartupShit();
   var h = document.getElementById("hamburger");
   h.addEventListener("click", openMenu);
 
@@ -162,8 +161,39 @@ function removeEmpties(obj) {
 }
 
 function setMissionImage() {
+  var images = [
+    {
+      num: 1,
+      caption: "beets and beards"
+    },
+
+    {
+      num: 2,
+      caption: "kaipo cuddles"
+    },
+
+    {
+      num: 3,
+      caption: "sexy kale"
+    },
+    {
+      num: 4,
+      caption: "sean the man with a plan"
+    },
+    {
+      num: 5,
+      caption: "naps and hydration can lead to enlightenment"
+    },
+    {
+      num: 6,
+      caption: "harvest time!"
+    }
+  ];
+
   var placeholder = document.getElementById("missionImg");
-  var imagesAvailable = 6; // can we programatically do this via "img/slides" folder?
-  var rand = Math.floor(Math.random() * 6) + 1;
+  var caption = document.getElementById("missionCaption");
+  var imagesAvailable = images.length; // can we programatically do this via "img/slides" folder?
+  var rand = Math.floor(Math.random() * imagesAvailable) + 1;
   placeholder.src = "./img/slides/" + rand + ".jpeg";
+  caption.innerHTML = images[rand - 1].caption;
 }
