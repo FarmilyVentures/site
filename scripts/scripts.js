@@ -7,11 +7,16 @@
 // 2. scroll enablers and disablers
 // 3. consultingPopup opener
 
+function runOtherStartupShit() {
+  setMissionImage();
+}
+
 //
 //
 //
 // 0. event listeners
 (function spawnEventListeners() {
+  runOtherStartupShit();
   var h = document.getElementById("hamburger");
   h.addEventListener("click", openMenu);
 
@@ -154,4 +159,11 @@ function removeEmpties(obj) {
     }
   });
   return newObj;
+}
+
+function setMissionImage() {
+  var placeholder = document.getElementById("missionImg");
+  var imagesAvailable = 6; // can we programatically do this via "img/slides" folder?
+  var rand = Math.floor(Math.random() * 6) + 1;
+  placeholder.src = "./img/slides/" + rand + ".jpeg";
 }
