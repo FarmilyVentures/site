@@ -182,7 +182,7 @@ function setMissionImage() {
     },
     {
       num: 5,
-      caption: "naps and hydration can lead to enlightenment"
+      caption: "naps and hydration lead to enlightenment"
     },
     {
       num: 6,
