@@ -114,6 +114,8 @@ h4 {
   justify-content: center;
   flex-direction: column;
 
+  padding-top: 80px;
+
   overflow-y: scroll;
 }
 
