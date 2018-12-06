@@ -53,6 +53,11 @@ h4 {
   font-size: 140%;
 }
 
+.inner-container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
 .divider {
   height: 1px;
   background-color: #5ecc62;
@@ -331,6 +336,12 @@ form button:hover {
   text-align: center;
 }
 
+.intro.presale {
+  height: 60vh;
+  background: url("../img/sexykale.jpg") no-repeat center center fixed;
+  overflow-y: scroll;
+}
+
 .intro h3,
 #about .description h3 {
   padding: 0;
@@ -557,4 +568,9 @@ footer {
   color: white;
   background: #5ecc62;
   text-align: center;
+}
+
+.info {
+  background: #5ecc62;
+  padding: 0;
 }
