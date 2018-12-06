@@ -421,6 +421,16 @@ form button:hover {
   }
 }
 
+.button.gold-baby {
+  color: silver;
+  border-color: silver;
+}
+
+.button.gold-baby:hover {
+  color: #ffd700;
+  border-color: #ffd700;
+}
+
 .button:hover {
   cursor: pointer;
   color: #5ecc62;
