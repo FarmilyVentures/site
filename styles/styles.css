@@ -609,3 +609,31 @@ footer {
 .info a:hover {
   color: #fff200;
 }
+
+.card-holder {
+  display: flex;
+  flex-direction: row-wrap;
+}
+
+.card-holder .card {
+  max-width: 400px;
+}
+
+.card-holder .card img {
+  max-width: 398px;
+  border-bottom: 1px solid silver;
+}
+
+.card-holder .card {
+  border: 1px solid silver;
+}
+
+.card-holder .card .inner {
+  padding: 16px;
+}
+
+.card-holder .card h5 {
+  margin: 0;
+  padding-left: 8px;
+  font-size: 36px;
+}
