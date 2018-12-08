@@ -197,3 +197,88 @@ function setMissionImage() {
   placeholder.src = "./img/slides/" + rand + ".jpeg";
   caption.innerHTML = images[rand - 1].caption;
 }
+
+function populateVeggieList() {
+  var fancyPhrases = ["Goes well in", "Delicious in your", "Add it to your"];
+  var firstRoundVeggies = [
+    {
+      title: "Tuscano Kale",
+      description:
+        "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>. Known for its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
+      img: "./img/crops/kale.jpg",
+      uses: "smoothies, stir fry, and salads."
+    },
+    {
+      title: "Galine Heirloom Italian Eggplant",
+      description:
+        "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, contain an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
+      img: "./img/crops/eggplant.jpg",
+      uses: "stir fry, pasta, roasting, and curries"
+    }
+  ];
+
+  var secondRoundVeggies = [
+    {
+      title: "Astro Arugala",
+      description: "",
+      img: "./img/crops/arugala.jpg",
+      uses: ""
+    },
+    {
+      title: "Early Wonder, Detroit Red and Touchstone Gold Beets",
+      description: "",
+      img: "./img/crops/beets.jpg",
+      uses: ""
+    }
+  ];
+
+  var thirdRoundVeggies = [
+    {
+      title: "Orange Ribbed Swiss Chard",
+      description:
+        "Rich orange attractive stems and savoyed leaves, Orange Ribbed Swiss Chard is known for its exceptional levels of dietary fiber, Vitamin A, K, Iron and antioxidants while defending against cancer, improving cognitive function and cleansing blood circulation.",
+      img: "./img/crops/chard.jpg",
+      uses: ""
+    },
+    {
+      title: "Flash Collard Greens",
+      description: "",
+      img: "./img/crops/collards.jpg",
+      uses: ""
+    },
+    {
+      title: "Sylvestia Lettuce",
+      description: "",
+      img: "./img/crops/lettuce.jpg",
+      uses: ""
+    },
+    {
+      title: "Acadia Spinach",
+      description: "",
+      img: "./img/crops/spinach.jpg",
+      uses: ""
+    },
+    {
+      title: "Easter Egg Radish",
+      description: "",
+      img: "./img/crops/radish.jpg",
+      uses: ""
+    },
+    {
+      title: "Hawaiian Lilikoi (Passionfruit)",
+      description: "",
+      img: "./img/crops/lilikoi.jpg",
+      uses: ""
+    },
+    {
+      title: "Golden Sunrise Papaya",
+      description: "",
+      img: "./img/crops/papaya.jpg",
+      uses: ""
+    }
+  ];
+
+  var firstRoundCardHolder = document.getElementById("firstRoundCards");
+  var secondRoundCardHolder = document.getElementById("secondRoundCards");
+  var thirdRoundCardHolder = document.getElementById("secondRoundCards");
+}
