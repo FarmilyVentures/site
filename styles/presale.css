@@ -1,0 +1,81 @@
+.intro.presale h3 {
+  font-size: 48px !important;
+}
+
+.info {
+  color: white;
+  padding: 16px;
+  border-top: 16px solid #5ecc62;
+}
+
+.info h4 {
+  font-size: 28px;
+  margin: 16px 0;
+}
+
+.info a {
+  color: #5ecc62;
+}
+
+.info a:hover {
+  color: #fff200;
+}
+
+.card-holder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.card-holder .card {
+  max-width: 280px;
+  margin: 0 16px 16px 0;
+}
+
+.card-holder .card img {
+  max-width: 278px;
+  border-bottom: 1px solid silver;
+}
+
+.card-holder .card {
+  border: 1px solid silver;
+}
+
+.card-holder .card .inner {
+  padding: 16px;
+}
+
+.card-holder .card h5 {
+  margin: 0;
+  font-family: "Permanent Marker", Courier, monospace;
+  font-size: 18px !important;
+}
+
+.card-holder .card p {
+  font-size: 88%;
+}
+
+@media (min-width: 768px) {
+  .intro.presale h3 {
+    font-size: 84px !important;
+  }
+
+  .info {
+    padding: 32px;
+  }
+
+  .info h4 {
+    font-size: 48px;
+    margin: 32px 0;
+  }
+
+  .card-holder .card {
+    max-width: 360px;
+  }
+
+  .card-holder .card img {
+    max-width: 358px;
+  }
+}
