@@ -8,7 +8,8 @@
 // 3. consultingPopup opener
 
 (function runStartupShit() {
-  setMissionImage();
+  //setMissionImage(); // TODO: do not run on all pages, need to modularize JS!
+  populateVeggieList();
 })();
 
 //
@@ -280,7 +281,21 @@ function populateVeggieList() {
     }
   ];
 
-  var firstRoundCardHolder = document.getElementById("firstRoundCards");
-  var secondRoundCardHolder = document.getElementById("secondRoundCards");
-  var thirdRoundCardHolder = document.getElementById("secondRoundCards");
+  var firstRoundCards = document.getElementById("firstRoundCards");
+  var secondRoundCards = document.getElementById("secondRoundCards");
+  var thirdRoundCards = document.getElementById("thirdRoundCards");
+
+  var cropCardsMap = {
+    firstRoundCards: firstRoundVeggies,
+    secondRoundCards: secondRoundVeggies,
+    thirdRoundCards: thirdRoundVeggies
+  };
+
+  var cardContainers = [firstRoundCards, secondRoundCards, thirdRoundCards];
+
+  cardContainers.map(function(container) {
+    console.log(container.id);
+    var crops = cropCardsMap[container.id];
+    console.log(crops);
+  });
 }
