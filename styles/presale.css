@@ -21,6 +21,10 @@
   color: #fff200;
 }
 
+.info form {
+  width: 95% !important;
+}
+
 .card-holder {
   display: flex;
   flex-wrap: wrap;
