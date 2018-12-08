@@ -52,7 +52,7 @@ function populateVeggieList() {
     {
       title: "Flash Collard Greens",
       description: "",
-      img: "./img/crops/collards.jpg",
+      img: "./img/crops/collard.jpg",
       uses: ""
     },
     {
@@ -80,7 +80,7 @@ function populateVeggieList() {
       uses: ""
     },
     {
-      title: "Golden Sunrise Papaya",
+      title: "Kamiya Laie Gold Papaya",
       description: "",
       img: "./img/crops/papaya.jpg",
       uses: ""
