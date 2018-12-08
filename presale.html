@@ -76,19 +76,47 @@
             </div>
 
             <label>
-              Name: <input name="contact" id="" type="text" required />
+              Name:
+              <input
+                name="contact"
+                id=""
+                type="text"
+                required
+                autocomplete="name"
+              />
             </label>
 
             <label>
-              Email: <input name="from" id="" type="email" required />
+              Email:
+              <input
+                name="from"
+                id=""
+                type="email"
+                required
+                autocomplete="email"
+              />
             </label>
 
             <label>
-              Address: <input name="address" id="" type="text" required />
+              Address:
+              <input
+                name="address"
+                id=""
+                type="text"
+                required
+                autocomplete="address"
+              />
             </label>
 
             <label>
-              Phone Number: <input name="phone" id="" type="tel" required />
+              Phone Number:
+              <input
+                name="phone"
+                id=""
+                type="tel"
+                required
+                autocomplete="tel"
+              />
             </label>
 
             <label>
@@ -100,6 +128,7 @@
                 type="number"
                 required
                 value="5"
+                autocomplete=""
               />
             </label>
 
@@ -112,6 +141,7 @@
                 type="number"
                 required
                 value="1"
+                autocomplete=""
               />
             </label>
 
@@ -123,6 +153,7 @@
                 placeholder="Aloha! Please fill in any information related to this message so that we can best assist you! Mahalo!"
                 required
                 style="height: 100px"
+                autocomplete=""
               ></textarea>
             </label>
             <button class="button">Submit</button>
@@ -141,7 +172,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"
     ></script>
-    <script type="text/javascript" src="./scripts/scripts.js"></script>
+    <script type="text/javascript" src="./scripts/store.js"></script>
     <script type="text/javascript">
       var scroll = new SmoothScroll('a[href*="#"]');
     </script>
