@@ -56,6 +56,10 @@
   padding: 8px;
   position: absolute;
   right: 0;
+
+  border: 1px solid silver;
+  border-top: none;
+  border-right: none;
 }
 
 .card-holder .card .price-tag small {
@@ -78,7 +82,7 @@
 
 @media (min-width: 768px) {
   .intro.presale h3 {
-    font-size: 84px !important;
+    font-size: 64px !important;
   }
 
   .info {
@@ -87,7 +91,7 @@
 
   .info h4 {
     font-size: 48px;
-    margin: 32px 0;
+    margin: 24px 0;
   }
 
   .card-holder .card {

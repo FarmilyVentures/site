@@ -8,7 +8,7 @@ function populateVeggieList() {
   // TODO: switch tags from text to array of tags.
   var firstRoundVeggies = [
     {
-      price: "0.00",
+      price: "3.00",
       title: "Tuscano Kale",
       description:
         "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>. Known for its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
@@ -16,7 +16,7 @@ function populateVeggieList() {
       tags: "smoothies, stir fry, and salads"
     },
     {
-      price: "0.00",
+      price: "3.00",
       title: "Galine Heirloom Italian Eggplant",
       description:
         "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, contain an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
@@ -24,7 +24,7 @@ function populateVeggieList() {
       tags: "stir frys, pastas, roasting, and curries"
     },
     {
-      price: "0.00",
+      price: "3.00",
       title: "Orange Ribbed Swiss Chard",
       description:
         "Rich orange attractive stems and savoyed leaves, Orange Ribbed Swiss Chard is known for its exceptional levels of dietary fiber, Vitamin A, K, Iron and antioxidants while defending against cancer, improving cognitive function and cleansing blood circulation.",
@@ -32,7 +32,7 @@ function populateVeggieList() {
       tags: "sauteed, salads, bakes and smoothies"
     },
     {
-      price: "0.00",
+      price: "2.50",
       title: "Astro Arugala",
       description:
         "Vibrant green leaves with a mild spice, known for its impressive vitamin and mineral spread, known for its ability to boost the immune system, slow aging, increase metabolism and general overall health from its high Vitamin A content.",
@@ -40,7 +40,7 @@ function populateVeggieList() {
       tags: "salads, pastas, and pizzas"
     },
     {
-      price: "0.00",
+      price: "3.50",
       title: "Early Wonder, Detroit Red and Touchstone Gold Beets",
       description:
         "Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.",
@@ -48,7 +48,7 @@ function populateVeggieList() {
       tags: "salads, juicing, and smoothies"
     },
     {
-      price: "0.00",
+      price: "2.50",
       title: "Acadia Spinach",
       description:
         "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. These empower you to slow aging, reduce the risk of cancer, improve eye health, regulate blood pressure and promote heart health.",
@@ -59,7 +59,7 @@ function populateVeggieList() {
 
   var futureRounds = [
     {
-      price: "0.00",
+      price: "3.00",
       title: "Flash Collard Greens",
       description:
         "These dark green smooth leaves rich in phyto-nutrients that combat various types of cancer, natural anti-bacterial and anti-virual properties, packed with Vitamin C, A, K, B-3, B-5, and riboflavin, and boast a an impressive essential minerals profile.",
@@ -67,7 +67,7 @@ function populateVeggieList() {
       tags: "steamed, sauteed, and stews"
     },
     {
-      price: "0.00",
+      price: "2.50",
       title: "Sylvestia Lettuce",
       description:
         "These thick flavorful leaves boast impressive health benefits, including being an anti-inflammitory agent, protector of neuronal cells, cholestoral fighter, sleep aid, cancer fighter, anxiety controller and anti-microbial defenses.",
@@ -75,7 +75,7 @@ function populateVeggieList() {
       tags: "sandwiches, salads and juices"
     },
     {
-      price: "0.00",
+      price: "3.50",
       title: "Easter Egg Radish",
       description:
         "This beautiful multicolor mix are crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.",
@@ -83,7 +83,7 @@ function populateVeggieList() {
       tags: "salads, stews, roasts or even pickled."
     },
     {
-      price: "0.00",
+      price: "1.50",
       title: "Hawaiian Lilikoi (Passionfruit)",
       description:
         "These delicious fruits native to Hawaii are packed with an extremely impressive array of vitamins and minerals critical for a healthy existence. Boosting immunity, preventing cancer, aiding digestion, reducing blood pressure and more, Lilikoi are the perfect treat.",
@@ -91,7 +91,7 @@ function populateVeggieList() {
       tags: "desserts, punches, juices, smoothies and drinks"
     },
     {
-      price: "0.00",
+      price: "5.00",
       title: "Kamiya Laie Gold Papaya",
       description:
         "A delicious gift to the world, the Kamiya Laie Gold Papaya will leave you glowing with its high dietary fiber content, immune boosting and anti-inflammitory agents, anti aging and skin care nutrients, as well as overall bodily fluid hardiness and health. The seeds are also endowed with magical properties.",
