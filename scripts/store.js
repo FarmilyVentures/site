@@ -104,16 +104,15 @@ function populateVeggieList() {
       container.innerHTML +=
         "<div class='card'><img src='" +
         crop["img"] +
-        "'/><h5>" +
+        "'/><div class='inner'><h5>" +
         crop["title"] +
         "</h5><p>" +
         crop["description"] +
-        "<small>" +
+        "<p><small>" +
         fancyPhrase +
         " " +
         crop["uses"] +
-        "</small>";
-      ("</div>");
+        "</small></p></div></div>";
     });
   });
 }

@@ -624,15 +624,20 @@ footer {
 
 .card-holder {
   display: flex;
-  flex-direction: row-wrap;
+  flex-wrap: wrap;
 }
 
 .card-holder .card {
-  max-width: 400px;
+  max-width: 360px;
+  margin: 8px 8px 0 8px;
+}
+
+.card-holder .card:first-of-type {
+  margin-left: 0;
 }
 
 .card-holder .card img {
-  max-width: 398px;
+  max-width: 358px;
   border-bottom: 1px solid silver;
 }
 
@@ -646,6 +651,10 @@ footer {
 
 .card-holder .card h5 {
   margin: 0;
-  padding-left: 8px;
-  font-size: 36px;
+  font-family: "Permanent Marker", Courier, monospace;
+  font-size: 18px !important;
+}
+
+.card-holder .card p {
+  font-size: 88%;
 }
