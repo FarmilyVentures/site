@@ -28,8 +28,8 @@
 .card-holder {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 8px;
 }
 
@@ -45,6 +45,21 @@
 
 .card-holder .card {
   border: 1px solid silver;
+  position: relative;
+}
+
+.card-holder .card .price-tag {
+  background: #fff200;
+
+  font-family: "Permanent Marker", Courier, monospace;
+  color: black;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+}
+
+.card-holder .card .price-tag small {
+  font-size: 75%;
 }
 
 .card-holder .card .inner {
