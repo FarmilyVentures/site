@@ -220,13 +220,15 @@ function populateVeggieList() {
   var secondRoundVeggies = [
     {
       title: "Astro Arugala",
-      description: "",
+      description:
+        "Vibrant green leaves with a mild spice, known for its impressive vitamin and mineral spread, known for its ability to boost the immune system, slow aging, increase metabolism and general overall health from its high Vitamin A content.",
       img: "./img/crops/arugala.jpg",
       uses: ""
     },
     {
       title: "Early Wonder, Detroit Red and Touchstone Gold Beets",
-      description: "",
+      description:
+        "Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.",
       img: "./img/crops/beets.jpg",
       uses: ""
     }
