@@ -102,9 +102,9 @@ function populateVeggieList() {
       price: "0.00",
       title: "Your Dream Item",
       description:
-        "Hawaii, especially the North Shore Agricultural Lands of Oahu, are especially fertile. We are interested in cultivating fast growing crops that thrive in Hardiness Zone 12B, or transplantable fruit trees 1-3 years in age. Let us know if you have ideas!",
-      img: "./img/crops/spinach.jpg",
-      tags: "pizza, omelettes, smoothies, juices, salads and more"
+        "North Shore Agricultural Lands of Oahu are especially fertile. We are interested in cultivating fast growing crops that thrive in Hardiness Zone 12B, or transplantable fruit trees 1-3 years in age. Let us know if you have ideas!",
+      img: "./img/crops/dream.jpg",
+      tags: "whatever you can imagine!!"
     }
   ];
 
