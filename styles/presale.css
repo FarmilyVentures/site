@@ -1,0 +1,104 @@
+.intro.presale h3 {
+  font-size: 48px !important;
+}
+
+.info {
+  color: white;
+  padding: 16px;
+  border-top: 16px solid #5ecc62;
+}
+
+.info h4 {
+  font-size: 28px;
+  margin: 16px 0;
+}
+
+.info a {
+  color: #5ecc62;
+}
+
+.info a:hover {
+  color: #fff200;
+}
+
+.info form {
+  width: 95% !important;
+}
+
+.card-holder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px;
+}
+
+.card-holder .card {
+  max-width: 280px;
+  margin: 0 16px 16px 0;
+}
+
+.card-holder .card img {
+  max-width: 278px;
+  border-bottom: 1px solid silver;
+}
+
+.card-holder .card {
+  border: 1px solid silver;
+  position: relative;
+}
+
+.card-holder .card .price-tag {
+  background: #fff200;
+
+  font-family: "Permanent Marker", Courier, monospace;
+  color: black;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+
+  border: 1px solid silver;
+  border-top: none;
+  border-right: none;
+}
+
+.card-holder .card .price-tag small {
+  font-size: 75%;
+}
+
+.card-holder .card .inner {
+  padding: 16px;
+}
+
+.card-holder .card h5 {
+  margin: 0;
+  font-family: "Permanent Marker", Courier, monospace;
+  font-size: 18px !important;
+}
+
+.card-holder .card p {
+  font-size: 88%;
+}
+
+@media (min-width: 768px) {
+  .intro.presale h3 {
+    font-size: 64px !important;
+  }
+
+  .info {
+    padding: 32px;
+  }
+
+  .info h4 {
+    font-size: 48px;
+    margin: 24px 0;
+  }
+
+  .card-holder .card {
+    max-width: 360px;
+  }
+
+  .card-holder .card img {
+    max-width: 358px;
+  }
+}
