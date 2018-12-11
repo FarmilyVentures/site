@@ -211,6 +211,10 @@ function populateVeggieList() {
 
       tags = tags.replace(/,/g, "");
 
+      var cropQuantitySelector = crop.id.length
+        ? "<div class='button-container'><button class='toggle'><i class='fas fa-caret-down'></i></button><p class='crop-count'>0</p><button class='toggle'><i class='fas fa-caret-up'></i></button></div>"
+        : null;
+
       container.innerHTML +=
         "<div class='card'><div class='price-tag'>$" +
         crop["price"] +
@@ -220,7 +224,7 @@ function populateVeggieList() {
         crop["title"] +
         "</h5><p>" +
         crop["description"] +
-        tags +
+        tags + cropQuantitySelector
         "</div></div>";
     });
   });

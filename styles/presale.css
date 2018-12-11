@@ -216,3 +216,23 @@
   color: white;
   background: #f97e77;
 }
+
+.card .button-container {
+  justify-content: center;
+  padding: 8px;
+}
+
+.card .button-container .toggle,
+.card .button-container .crop-count {
+  font-size: 120% !important;
+}
+
+.card .button-container .toggle {
+  color: #5ecc62;
+  padding: 8px 16px;
+}
+
+.card .button-container .crop-count {
+  font-size: 125% !important;
+  margin: 0;
+}
