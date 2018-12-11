@@ -45,6 +45,8 @@ function handleOrder(e) {
       // The form submission was successful
       form.reset();
 
+      formResponse.classList.add("success");
+
       formResponse.innerHTML =
         "We've received your order and will reach out soon!";
 
@@ -54,6 +56,7 @@ function handleOrder(e) {
       // The form submission failed
       formResponse.innerHTML =
         "Something went wrong, please email au.witherow@gmail.com if you see this and help him figure out how he messed up haha";
+      formResponse.classList.add("error");
       console.error(JSON.parse(response.target.response).message);
     }
   };

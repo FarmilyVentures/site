@@ -54,6 +54,18 @@ h4 {
   font-size: 140%;
 }
 
+#js-form-response {
+  font-weight: bold;
+}
+
+#js-form-response.success {
+  color: #5ecc62;
+}
+
+#js-form-response.error {
+  color: #ff0000;
+}
+
 .inner-container {
   max-width: 768px;
   margin: 0 auto;
@@ -135,45 +147,6 @@ h4 {
   padding-top: 80px;
 
   overflow-y: scroll;
-}
-
-#mailchimp {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  background-color: #5ecc62;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#mailchimp a i {
-  color: white;
-  font-size: 24px;
-}
-
-#mailchimp a:visited i {
-  color: white;
-}
-
-#mailchimp a:hover i {
-  color: black;
-}
-
-@media (min-width: 768px) {
-  #mailchimp label {
-    margin-bottom: 0;
-    margin-right: 8px;
-  }
-}
-
-#mailchimp #consultingPopup.shown {
-  padding-top: 80px;
-  justify-content: flex-start;
 }
 
 form {
