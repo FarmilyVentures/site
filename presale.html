@@ -105,16 +105,31 @@
             </label>
 
             <label>
-              Street Address: <input name="addrOne" type="text" required />
+              Street Address:
+              <input
+                name="addrOne"
+                type="text"
+                required
+                autocomplete="address-line1"
+              />
             </label>
 
-            <label> <input name="addrTwo" type="text" /> </label>
+            <label>
+              <input name="addrTwo" type="text" autocomplete="address-line2" />
+            </label>
 
             <div class="inline-form-section">
-              <label>City: <input name="city" type="text"/></label>
-              <label>State: <input name="state" type="text"/></label>
               <label
-                >Zip Code: <input name="zip" type="number" autocomplet="zip"
+                >City:
+                <input name="city" type="text" autocomplete="address-level1"
+              /></label>
+              <label
+                >State:
+                <input name="state" type="text" autocomplete="address-level2"
+              /></label>
+              <label
+                >Zip Code:
+                <input name="zip" type="number" autocomplete="postal-code"
               /></label>
             </div>
 
