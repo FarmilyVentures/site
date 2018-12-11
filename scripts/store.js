@@ -1,6 +1,74 @@
-(function runStartupShit() {
+(function startup() {
+  const form = document.getElementById("order-form");
+  form.addEventListener("submit", handleOrder);
+
   populateVeggieList();
 })();
+
+// email form for consulting handling
+function handleOrder(e) {
+  e.preventDefault();
+
+  const form = this;
+
+  // Prepare data to send
+  let data = {};
+  const formElements = Array.from(form);
+
+  formElements.map(function(input) {
+    data[input.name] = input.value;
+  });
+
+  data = removeEmpties(data);
+
+  if (document.getElementById("honeypot").value) {
+    window.location = "https://www.youtube.com/watch?v=QH2-TGUlwu4";
+  }
+
+  // Log what our lambda function will receive
+  console.log(JSON.stringify(data));
+
+  // Construct an HTTP request
+  var xhr = new XMLHttpRequest();
+  xhr.open(form.method, form.action, true);
+  xhr.setRequestHeader("Accept", "application/json; charset=utf-8");
+  xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+
+  // Send the collected data as JSON
+  xhr.send(JSON.stringify(data));
+
+  const formResponse = document.getElementById("js-form-response");
+
+  // Callback function
+  xhr.onloadend = function(response) {
+    if (response.target.status === 200) {
+      // The form submission was successful
+      form.reset();
+
+      formResponse.innerHTML =
+        "We've received your order and will reach out soon!";
+
+      closeConsulting();
+      formResponse.style = "display: none";
+    } else {
+      // The form submission failed
+      formResponse.innerHTML =
+        "Something went wrong, please email au.witherow@gmail.com if you see this and help him figure out how he messed up haha";
+      console.error(JSON.parse(response.target.response).message);
+    }
+  };
+}
+
+// remove empty key/value pairs from objects
+function removeEmpties(obj) {
+  var newObj = {};
+  Object.keys(obj).forEach(function(prop) {
+    if (obj[prop]) {
+      newObj[prop] = obj[prop];
+    }
+  });
+  return newObj;
+}
 
 function populateVeggieList() {
   var fancyPhrases = ["Goes well in", "Delicious in your", "Add it to your"];

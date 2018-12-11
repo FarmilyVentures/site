@@ -87,6 +87,7 @@
           <form
             action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer"
             method="POST"
+            id="order-form"
           >
             <div style="display:none;">
               <label>Keep this field blank</label>
@@ -119,7 +120,7 @@
 
             <label>
               Phone Number:
-              <input name="phone" type="tel" required autocomplete="tel" />
+              <input name="tel" type="tel" required autocomplete="tel" />
             </label>
 
             <label>
@@ -132,7 +133,10 @@
                 autocomplete=""
               ></textarea>
             </label>
-            <button class="button">Submit</button>
+            <div>
+              <button class="button">Submit</button>
+              <span class="js-form-response"></span>
+            </div>
           </form>
         </section>
       </div>
