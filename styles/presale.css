@@ -1,3 +1,12 @@
+.header.no-hide ul {
+  display: inherit;
+}
+
+.header.no-hide ul li {
+  padding: 0;
+  font-size: 150%;
+}
+
 .intro.presale h3 {
   font-size: 48px !important;
 }

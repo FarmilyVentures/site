@@ -287,6 +287,10 @@ form .inline-form-section label:last-of-type {
   margin-left: auto;
 }
 
+.header.no-hide ul {
+  display: inherit;
+}
+
 .header #hamburger {
   display: inline-block;
   font-size: 24px;
