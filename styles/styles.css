@@ -77,6 +77,13 @@ h4 {
   width: 80px;
   margin: 16px 0;
 }
+
+.divider.small {
+  width: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 .section-heading small {
   display: block;
   font-size: 25%;

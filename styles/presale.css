@@ -78,6 +78,14 @@
   border-right: none;
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-holder .card .price-tag select {
+  margin-right: 8px;
 }
 
 .card-holder .card .price-tag small {
