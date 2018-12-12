@@ -65,6 +65,10 @@ function handleOrder(e) {
   xhr.open(form.method, form.action, true);
   xhr.setRequestHeader("Accept", "application/json; charset=utf-8");
   xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+  xhr.setRequestHeader(
+    "Access-Control-Allow-Origin",
+    "https://farmily.ventures"
+  );
 
   // Send the collected data as JSON
   xhr.send(JSON.stringify(data));
