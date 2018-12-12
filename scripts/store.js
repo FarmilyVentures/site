@@ -74,8 +74,6 @@ function removeEmpties(obj) {
 }
 
 function populateVeggieList() {
-  var fancyPhrases = ["Goes well in", "Delicious in your", "Add it to your"];
-
   // TODO: switch tags from text to array of tags.
   var firstRoundVeggies = [
     {
@@ -84,7 +82,7 @@ function populateVeggieList() {
       description:
         "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>. Known for its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
       img: "./img/crops/kale.jpg",
-      tags: ["smoothies", "stir fry", "salads"],
+      tags: ["smoothies", "stirfrys", "salads"],
       id: "kale"
     },
     {
@@ -93,7 +91,7 @@ function populateVeggieList() {
       description:
         "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, contain an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
       img: "./img/crops/eggplant.jpg",
-      tags: ["stir frys", "pastas", "roasting", "curries"],
+      tags: ["stirfrys", "pastas", "roasts", "curries"],
       id: "eggplant"
     },
     {
@@ -120,7 +118,7 @@ function populateVeggieList() {
       description:
         "Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.",
       img: "./img/crops/beets.jpg",
-      tags: ["salads", "juicing", "smoothies"],
+      tags: ["salads", "juices", "smoothies"],
       id: "beets"
     },
     {
@@ -129,7 +127,7 @@ function populateVeggieList() {
       description:
         "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. These empower you to slow aging, reduce the risk of cancer, improve eye health, regulate blood pressure and promote heart health.",
       img: "./img/crops/spinach.jpg",
-      tags: ["pizza", "omelettes", "smoothies", "juices", "salads"],
+      tags: ["pizzas", "omelettes", "smoothies", "juices", "salads"],
       id: "spinach"
     }
   ];
@@ -177,7 +175,7 @@ function populateVeggieList() {
       description:
         "A delicious gift to the world, the Kamiya Laie Gold Papaya will leave you glowing with its high dietary fiber content, immune boosting and anti-inflammitory agents, anti aging and skin care nutrients, as well as overall bodily fluid hardiness and health. The seeds are also endowed with magical properties.",
       img: "./img/crops/papaya.jpg",
-      tags: ["desserts", "salads", "juicesm", "smoothies"],
+      tags: ["desserts", "salads", "juices", "smoothies"],
       id: ""
     },
     {
@@ -186,7 +184,7 @@ function populateVeggieList() {
       description:
         "North Shore Agricultural Lands of Oahu are especially fertile. We are interested in cultivating fast growing crops that thrive in Hardiness Zone 12B, or transplantable fruit trees 1-3 years in age. Let us know if you have ideas!",
       img: "./img/crops/dream.jpg",
-      tags: "whatever you can imagine!!",
+      tags: ["anything"],
       id: ""
     }
   ];
@@ -203,8 +201,13 @@ function populateVeggieList() {
 
   cardContainers.map(function(container) {
     cropCardsMap[container.id].map(function(crop) {
-      var fancyPhrase =
-        fancyPhrases[Math.floor(Math.random() * fancyPhrases.length)];
+      var tags =
+        "<ul class='tag-list'>" +
+        crop["tags"].map(function(tag) {
+          var cname = tag.replace(" ", "-");
+          return "<li class='tag " + cname + "'>" + tag + "</li>";
+        }) +
+        "</ul>";
 
       container.innerHTML +=
         "<div class='card'><div class='price-tag'>$" +
@@ -215,11 +218,8 @@ function populateVeggieList() {
         crop["title"] +
         "</h5><p>" +
         crop["description"] +
-        "<p><small>" +
-        fancyPhrase +
-        " <strong>" +
-        crop["tags"] +
-        ".</small></strong></p></div></div>";
+        tags +
+        "</div></div>";
     });
   });
 }

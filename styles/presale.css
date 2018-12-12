@@ -88,6 +88,24 @@
   padding: 16px;
 }
 
+.card-holder .card .tag-list {
+  padding: 0;
+  margin: 0;
+}
+
+.card-holder .card .tag-list .tag {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  font-size: 80%;
+  border-radius: 4px;
+}
+
+.card-holder .card .tag-list .tag:last-of-type {
+  margin-right: 0;
+}
+
 .card-holder .card h5 {
   margin: 0;
   font-family: "Permanent Marker", Courier, monospace;
@@ -116,4 +134,85 @@
   .card-holder .card img {
     max-width: 360px;
   }
+}
+
+.stirfrys {
+  color: white;
+  background: #138d90;
+}
+.curries {
+  color: white;
+  background: #001871;
+}
+.bakes {
+  color: white;
+  background: #43bcff;
+}
+.pizzas {
+  color: white;
+  background: #ffb743;
+}
+.omelettes {
+  color: white;
+  background: #e95b4f;
+}
+.steamed {
+  color: white;
+  background: #230827;
+}
+.sauteed {
+  color: white;
+  background: #491647;
+}
+.stews {
+  color: white;
+  background: #7c265e;
+}
+.sandwiches {
+  color: black;
+  background: #ff5454;
+}
+.salads {
+  color: black;
+  background: #ff813c;
+}
+.roasts {
+  color: white;
+  background: #8bc24c;
+}
+.pickled {
+  color: white;
+  background: #194f90;
+}
+.punches {
+  color: black;
+  background: #f6d04d;
+}
+.drinks {
+  color: white;
+  background: #f29c2b;
+}
+.desserts {
+  color: white;
+  background: #de4307;
+}
+.salads {
+  color: white;
+  background: #ff3366;
+}
+.juices {
+  color: white;
+  background: #33cc99;
+}
+.smoothies {
+  color: white;
+  background: #66ccff;
+}
+.anything {
+  color: white;
+  background: #2e4ea7;
+}
+.pastas {
+  color: white;
+  background: #f97e77;
 }
