@@ -49,21 +49,46 @@
           <div class="divider center"></div>
           <p>
             As Alohawai farm, we have begun to till the ground with our Mana,
-            and expect harvest for initial crops in mid-January. Things will
+            and expect harvest for initial produce in mid-January. Things will
             proceed rapidly after this as we're already seeing exciting growth
-            of our organic seeds.
-            <strong>
-              For the first couple rounds of boxes, we will only be able to
-              offer</strong
-            >
+            of our organic seeds. After this, we hope to increase our supply of
+            existing crops, and add new crops to our inventory.
           </p>
+
+          <h5 class="center">How to Order</h5>
+          <div class="divider center small"></div>
+          <ul>
+            <li>Browse our <strong>first round</strong> produce,</li>
+            <li>
+              Select quantity, in pounds, of desired order per item (located at
+              the price tag)
+            </li>
+            <li>Confirm produce quantites in shopping cart above form.</li>
+            <li>
+              Fill in the form and leave some details, questions, ideas, etc!
+            </li>
+            <li>Submit the form</li>
+            <li>
+              When we've received your order form, we will send you a
+              confirmation email.
+            </li>
+            <li>
+              A week before produce is ready, expected Mid January first flush,
+              we will send you an invoice and confirmation of preorder.
+            </li>
+          </ul>
+          <p>
+            Thank you for making it this far and considering buying
+            <strong>local</strong>, <strong>organic</strong>,
+            <strong>superfoods</strong> from Alohawai Farm.
+          </p>
+          <h5 class="center">First Round Crop List</h5>
+          <div class="divider center small"></div>
           <div id="firstRoundCards" class="card-holder"></div>
         </section>
         <section>
-          <p>
-            In the near future, we plan on offering a wide variety of vegetables
-            include additions of:
-          </p>
+          <h5 class="center">Future Round Crop List</h5>
+          <div class="divider center small"></div>
           <div id="futureRoundCards" class="card-holder"></div>
           <p>
             and more! Have a recommendation of what you would like to see?
@@ -71,19 +96,36 @@
           </p>
         </section>
         <section>
-          <h4 class="section-heading center">Signup For The Presale Below</h4>
+          <h4 class="section-heading center">Presale Order Form</h4>
           <p>
-            Please fill out the form for your ideal custom veggie box. Free
-            delivery on orders over $25.
+            Please read the <strong>Important Notices</strong>, complete the
+            form and submit your veggie box order! Thank you for considering
+            business with Alohawai Farm, your local source for organic fresh
+            superfoods.
           </p>
-          <div class="divider center"></div>
+          <h5 class="center">Important Notices</h5>
+          <div class="divider center small"></div>
+          <ul>
+            <li>Free delivery on orders over $25.</li>
+            <li>
+              $5/20 miles (roundtrip) on delivery orders under $25 to cover gas.
+            </li>
+            <li>
+              We only offer pickup and delivery for the island of Oahu, Hawaii
+              at the current time.
+            </li>
+            <li>
+              If you cancel your presale order there will be $5 cancellation fee
+              for miscalculations.
+            </li>
+          </ul>
+          <h5 class="center">Shopping Cart</h5>
+          <div class="divider center small"></div>
           <p>
-            <small
-              >We only offer pickup and delivery (additional charges may apply)
-              for the island of Oahu, Hawaii at the current time. Thank you for
-              your patience and understanding.</small
-            >
+            Please verify and make changes below before submitting your order.
           </p>
+          <ul id="shopping-cart"></ul>
+          <div class="divider center small"></div>
           <form
             action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer"
             method="POST"
@@ -142,11 +184,25 @@
               Details:
               <textarea
                 name="body"
-                placeholder="Please enter the details of what produce you would like, as well as how many pounds per item."
+                placeholder="Details, feedback, questions, ideas, and more here."
                 required
                 style="height: 100px"
                 autocomplete=""
               ></textarea>
+            </label>
+            <label
+              style="display: flex; align-items: center; justify-content: flex-start; margin: 16px 0;"
+            >
+              <input
+                style="width: auto; top: 4px; position: relative; margin-right: 8px"
+                type="checkbox"
+                name="terms"
+                required
+              />
+              <span style="font-size: 80%"
+                >I've read the <strong>Important Notices</strong> and agree to
+                these terms.</span
+              >
             </label>
             <div>
               <button class="button">Submit</button>
@@ -169,6 +225,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"
     ></script>
+    <script type="text/javascript" src="./scripts/_utils.js"></script>
     <script type="text/javascript" src="./scripts/store.js"></script>
     <script type="text/javascript">
       var scroll = new SmoothScroll('a[href*="#"]');
