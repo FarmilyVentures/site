@@ -3,7 +3,7 @@
 // 2. setEventListeners - handles all event listeners
 // 3. handleOrder - order signup form handler
 // 4. populateVeggieList - render veggie cards
-// 5. handleQuantityChange - updates localstorage store and UI of deisred order.
+// 5. handleQuantityChange - updates UI of deisred shopping cart item.
 // 6. renderShoppingCartItem - updates order form quantities of veggies above form
 
 (function startup() {
@@ -18,6 +18,7 @@ function setEventListeners() {
 
   for (let selector of document.getElementsByClassName("crop-selector")) {
     selector.addEventListener("change", handleQuantityChange);
+    // TODO, how to get from storage and update shopping cart?
   }
 }
 
