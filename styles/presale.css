@@ -37,6 +37,7 @@
 
 #follow-cart-container.shown {
   display: flex;
+  z-index: 9;
 }
 
 #follow-cart-container a {
