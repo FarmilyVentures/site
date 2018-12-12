@@ -54,26 +54,30 @@
 
 .card-holder .card img {
   max-width: 278px;
-  border-bottom: 1px solid silver;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .card-holder .card {
-  border: 1px solid silver;
   position: relative;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
 
 .card-holder .card .price-tag {
   background: #fff200;
 
-  font-family: "Permanent Marker", Courier, monospace;
   color: black;
   padding: 8px;
   position: absolute;
   right: 0;
 
-  border: 1px solid silver;
   border-top: none;
   border-right: none;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .card-holder .card .price-tag small {
@@ -87,7 +91,7 @@
 .card-holder .card h5 {
   margin: 0;
   font-family: "Permanent Marker", Courier, monospace;
-  font-size: 18px !important;
+  font-size: 20px !important;
 }
 
 .card-holder .card p {
@@ -108,11 +112,8 @@
     margin: 24px 0;
   }
 
-  .card-holder .card {
-    max-width: 360px;
-  }
-
+  .card-holder .card,
   .card-holder .card img {
-    max-width: 358px;
+    max-width: 360px;
   }
 }
