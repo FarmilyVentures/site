@@ -288,7 +288,19 @@ function handleQuantityChange() {
   var itemChanged = this.name;
   var newQuantity = this.value;
 
+  var followALongCheckout = document.getElementById("follow-cart-container");
+
+  if (!followALongCheckout.classList.contains("shown")) {
+    followALongCheckout.classList.add("bounceIn", "shown");
+  }
+
   renderShoppingCartItem(itemChanged, newQuantity);
+
+  var shoppingCartList = document.getElementById("shopping-cart");
+  var shoppingCartCount = document.getElementById("shopping-cart-count");
+  shoppingCartCount.innerText = shoppingCartList.getElementsByTagName(
+    "li"
+  ).length;
 
   for (let selector of document.getElementsByClassName("crop-selector")) {
     if (itemChanged === selector.name && newQuantity != selector.value) {
