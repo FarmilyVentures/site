@@ -73,6 +73,7 @@ function handleOrder(e) {
 
   // Callback function
   xhr.onloadend = function(response) {
+    console.log(response);
     if (response.target.status === 200) {
       // The form submission was successful
       form.reset();
@@ -80,10 +81,15 @@ function handleOrder(e) {
       formResponse.classList.add("success");
 
       formResponse.innerHTML =
-        "We've received your order and will reach out soon!";
+        "We've received your order and will reach out soon, thank you!";
 
-      closeConsulting();
-      formResponse.style = "display: none";
+      // TODO: clear shopping cart && all shopping list items.
+      var followALongCheckout = document.getElementById(
+        "follow-cart-container"
+      );
+
+      followALongCheckout.classList.remove("shown");
+      document.getElementById("shopping-cart").innerHTML = "";
     } else {
       // The form submission failed
       formResponse.innerHTML =
