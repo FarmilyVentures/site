@@ -209,6 +209,8 @@ function populateVeggieList() {
         }) +
         "</ul>";
 
+      tags = tags.replace(/,/g, "");
+
       container.innerHTML +=
         "<div class='card'><div class='price-tag'>$" +
         crop["price"] +

@@ -96,7 +96,7 @@
 .card-holder .card .tag-list .tag {
   list-style-type: none;
   display: inline-block;
-  margin-right: 8px;
+  margin: 4px;
   padding: 2px 8px;
   font-size: 80%;
   border-radius: 4px;
