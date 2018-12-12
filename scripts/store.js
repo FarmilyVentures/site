@@ -37,14 +37,10 @@ function handleOrder(e) {
   e.preventDefault();
 
   const form = this;
-  const itemsOrdered = [];
-
-  for (let orderItem of document.getElementsByClassName("shopping-cart-item")) {
-    itemsOrdered.push({ name: orderItem.name, value: orderItem.value });
-  }
+  const cart = getShoppingCart();
 
   // Prepare data to send
-  let data = { itemsOrdered };
+  let data = { cart };
   const formElements = Array.from(form);
 
   formElements.map(function(input) {
@@ -313,6 +309,8 @@ function handleQuantityChange() {
       selector.value = newQuantity;
     }
   }
+
+  updateTotalPrice();
 }
 
 function renderShoppingCartItem(item, quantity) {
@@ -349,4 +347,16 @@ function renderShoppingCartItem(item, quantity) {
       .getElementById(id)
       .addEventListener("change", handleQuantityChange);
   }
+}
+
+function getShoppingCart() {
+  const cart = [];
+  for (let orderItem of document.getElementsByClassName("shopping-cart-item")) {
+    cart.push({ name: orderItem.name, value: orderItem.value });
+  }
+  return cart;
+}
+
+function updateTotalPrice() {
+  const cart = getShoppingCart();
 }
