@@ -1,3 +1,22 @@
+.follow-cart-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: #5ecc62;
+  border-radius: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.follow-cart-container a {
+  color: white;
+}
+
 .header.no-hide ul {
   display: inherit;
 }
@@ -48,22 +67,27 @@
 }
 
 .card-holder .card {
-  max-width: 280px;
-  margin: 0 16px 16px 0;
-}
-
-.card-holder .card img {
-  max-width: 278px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.card-holder .card {
+  width: 90vw;
+  max-width: 400px;
+  margin: 0 0 16px 0;
   position: relative;
   border-radius: 8px;
   background: white;
   color: black;
   box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+@media (min-width: 768px) {
+  .card-holder .card {
+    margin-right: 16px;
+  }
+}
+
+.card-holder .card img {
+  width: 90vw;
+  max-width: 400px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .card-holder .card .price-tag {
