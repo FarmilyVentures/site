@@ -27,9 +27,14 @@ function handleOrder(e) {
   e.preventDefault();
 
   const form = this;
+  const itemsOrdered = [];
+
+  for (let orderItem of document.getElementsByClassName("shopping-cart-item")) {
+    itemsOrdered.push({ name: orderItem.name, value: orderItem.value });
+  }
 
   // Prepare data to send
-  let data = {};
+  let data = { itemsOrdered };
   const formElements = Array.from(form);
 
   formElements.map(function(input) {
