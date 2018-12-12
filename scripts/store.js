@@ -4,7 +4,7 @@
 // 3. handleOrder - order signup form handler
 // 4. populateVeggieList - render veggie cards
 // 5. handleQuantityChange - updates localstorage store and UI of deisred order.
-// 6. renderShoppingCartItems - updates order form quantities of veggies above form
+// 6. renderShoppingCartItem - updates order form quantities of veggies above form
 
 (function startup() {
   populateVeggieList();
@@ -20,10 +20,10 @@ function setEventListeners() {
     var priorQuantity = getFromLocalStorage(selector.name);
 
     if (priorQuantity) {
-      document.getElementById(
-        "selector-" + selector.name
-      ).value = priorQuantity;
+      selector.value = priorQuantity;
+      renderShoppingCartItem(selector.name, priorQuantity);
     }
+
     selector.addEventListener("change", handleQuantityChange);
   }
 }
@@ -246,15 +246,11 @@ function populateVeggieList() {
 
       tags = tags.replace(/,/g, "");
 
-      var numberList = Array.from(Array(51), function(_, x) {
-        return x;
-      });
+      var numberList = getArrayOfNumbers(50);
 
       var quantity =
         crop.stocked &&
-        "<select id='selector-" +
-          crop.id +
-          "' class='crop-selector' name=" +
+        "<select class='crop-selector' name=" +
           crop.id +
           ">" +
           numberList.map(function(x) {
@@ -282,9 +278,29 @@ function populateVeggieList() {
 
 function handleQuantityChange() {
   setToLocalStorage(this.name, this.value);
-  renderShoppingCartItems();
+  renderShoppingCartItem(item, quantity);
 }
 
-function renderShoppingCartItems() {
+function renderShoppingCartItem(item, quantity) {
+  var li = document.getElementById("cart-item-" + item);
   var shoppingCart = document.getElementById("shopping-cart");
+
+  if (li) {
+    li.innerHTML = quantity;
+  } else {
+    var numberList = getArrayOfNumbers(50);
+
+    shoppingCart.innerHTML +=
+      "<li id='cart.item-" +
+      item +
+      "' ><select class='crop-selector' name=" +
+      item +
+      ">" +
+      numberList.map(function(x) {
+        return "<option value=" + x + ">" + x + "</option>";
+      }) +
+      "</select> - " +
+      item +
+      " </li>";
+  }
 }
