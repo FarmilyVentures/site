@@ -17,13 +17,6 @@ function setEventListeners() {
   form.addEventListener("submit", handleOrder);
 
   for (let selector of document.getElementsByClassName("crop-selector")) {
-    var priorQuantity = getFromLocalStorage(selector.name);
-
-    if (priorQuantity) {
-      selector.value = priorQuantity;
-      renderShoppingCartItem(selector.name, priorQuantity);
-    }
-
     selector.addEventListener("change", handleQuantityChange);
   }
 }
@@ -248,20 +241,19 @@ function populateVeggieList() {
 
       var numberList = getArrayOfNumbers(50);
 
-      var quantity =
-        crop.stocked &&
-        "<select class='crop-selector' name=" +
+      var quantity = crop.stocked
+        ? "<select class='crop-selector' name=" +
           crop.id +
           ">" +
           numberList.map(function(x) {
             return "<option value=" + x + ">" + x + "</option>";
           }) +
-          "</select>";
+          "</select> at "
+        : "";
 
       container.innerHTML +=
         "<div class='card'><div class='price-tag'>" +
         quantity +
-        "x" +
         " $" +
         crop["price"] +
         "<small>/pound</small></div><img src='" +
@@ -277,30 +269,48 @@ function populateVeggieList() {
 }
 
 function handleQuantityChange() {
+  console.log(this);
   setToLocalStorage(this.name, this.value);
-  renderShoppingCartItem(item, quantity);
+  renderShoppingCartItem(this.name, this.value);
+  for (let selector of document.getElementsByClassName("crop-selector")) {
+    if (this.name === selector.name && this.value != selector.value) {
+      selector.value = this.value;
+    }
+  }
 }
 
 function renderShoppingCartItem(item, quantity) {
   var li = document.getElementById("cart-item-" + item);
+
   var shoppingCart = document.getElementById("shopping-cart");
 
-  if (li) {
-    li.innerHTML = quantity;
-  } else {
-    var numberList = getArrayOfNumbers(50);
+  var numberList = getArrayOfNumbers(50);
 
-    shoppingCart.innerHTML +=
-      "<li id='cart.item-" +
-      item +
-      "' ><select class='crop-selector' name=" +
-      item +
-      ">" +
-      numberList.map(function(x) {
-        return "<option value=" + x + ">" + x + "</option>";
-      }) +
-      "</select> - " +
-      item +
-      " </li>";
+  var selected = function(x) {
+    return x === parseInt(quantity) ? "selected" : "";
+  };
+
+  var id = "cart-item-" + item;
+
+  var quantitySelector =
+    "<select id='" +
+    id +
+    "' name='" +
+    item +
+    "'>" +
+    numberList.map(function(x) {
+      return "<option value='" + x + "'" + selected(x) + ">" + x + "</option>";
+    }) +
+    "</select> - " +
+    capitalizeFirstLetter(item);
+
+  if (li) {
+    li.innerHTML = quantitySelector;
+  } else {
+    shoppingCart.innerHTML += "<li>" + quantitySelector + "</li>";
+
+    document
+      .getElementById(id)
+      .addEventListener("change", handleQuantityChange);
   }
 }
