@@ -270,12 +270,14 @@ function populateVeggieList() {
 }
 
 function handleQuantityChange() {
-  console.log(this);
-  setToLocalStorage(this.name, this.value);
-  renderShoppingCartItem(this.name, this.value);
+  var itemChanged = this.name;
+  var newQuantity = this.value;
+
+  renderShoppingCartItem(itemChanged, newQuantity);
+
   for (let selector of document.getElementsByClassName("crop-selector")) {
-    if (this.name === selector.name && this.value != selector.value) {
-      selector.value = this.value;
+    if (itemChanged === selector.name && newQuantity != selector.value) {
+      selector.value = newQuantity;
     }
   }
 }
@@ -296,7 +298,7 @@ function renderShoppingCartItem(item, quantity) {
   var quantitySelector =
     "<select id='" +
     id +
-    "' name='" +
+    "' class='shopping-cart-item' name='" +
     item +
     "'>" +
     numberList.map(function(x) {
