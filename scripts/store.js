@@ -113,7 +113,7 @@ function getVeggies() {
       price: "3.00",
       title: "Tuscano Kale",
       description:
-        "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>. Known for its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
+        "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>, as well as its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
       img: "./img/crops/kale.jpg",
       tags: ["smoothies", "stirfrys", "salads"],
       id: "kale",
@@ -124,7 +124,7 @@ function getVeggies() {
       price: "3.00",
       title: "Galine Heirloom Italian Eggplant",
       description:
-        "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, contain an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
+        "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, containing an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
       img: "./img/crops/eggplant.jpg",
       tags: ["stirfrys", "pastas", "roasts", "curries"],
       id: "eggplant",
@@ -168,7 +168,7 @@ function getVeggies() {
       price: "2.50",
       title: "Acadia Spinach",
       description:
-        "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. These empower you to slow aging, reduce the risk of cancer, improve eye health, regulate blood pressure and promote heart health.",
+        "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. Spinach slows aging, reduces the risk of cancer, improves eye health, regulates blood pressure and promotes heart health.",
       img: "./img/crops/spinach.jpg",
       tags: ["pizzas", "omelettes", "smoothies", "juices", "salads"],
       id: "spinach",
@@ -179,7 +179,7 @@ function getVeggies() {
       price: "3.00",
       title: "Flash Collard Greens",
       description:
-        "These dark green smooth leaves rich in phyto-nutrients that combat various types of cancer, natural anti-bacterial and anti-virual properties, packed with Vitamin C, A, K, B-3, B-5, and riboflavin, and boast a an impressive essential minerals profile.",
+        "These dark green smooth leaves are rich in phyto-nutrients that combat various types of cancer, natural anti-bacterial and anti-virual properties, packed with Vitamin C, A, K, B-3, B-5, and riboflavin, and boast an impressive essential minerals profile.",
       img: "./img/crops/collard.jpg",
       tags: ["steamed", "sauteed", "stews"],
       id: "collards",
@@ -190,7 +190,7 @@ function getVeggies() {
       price: "3.50",
       title: "Easter Egg Radish",
       description:
-        "This beautiful multicolor mix are crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.",
+        "This beautiful multicolor mix is crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.",
       img: "./img/crops/radish.jpg",
       tags: ["salads", "stews", "roasts", "pickled"],
       id: "radish",
