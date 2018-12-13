@@ -2,30 +2,43 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 48px;
+  width: 140px;
   height: 48px;
+
   background: #5ecc62;
-  border-radius: 32px;
+  border-radius: 8px;
+  padding: 0;
 
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
 
   display: none;
 }
 
+@media (min-width: 768px) {
+  #follow-cart-container {
+    right: 5%;
+    bottom: 5%;
+  }
+}
+
+.shopping-cart-icon {
+  position: relative;
+}
+
 #shopping-cart-count {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -8px;
+  right: -8px;
   background: red;
   color: white;
 
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 10px;
   z-index: 9;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +57,11 @@
   color: white;
   position: relative;
   font-size: 24px;
+}
+
+#total-order-amount {
+  margin-left: 16px;
+  color: white;
 }
 
 .header.no-hide ul {

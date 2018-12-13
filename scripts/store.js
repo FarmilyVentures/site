@@ -37,14 +37,10 @@ function handleOrder(e) {
   e.preventDefault();
 
   const form = this;
-  const itemsOrdered = [];
-
-  for (let orderItem of document.getElementsByClassName("shopping-cart-item")) {
-    itemsOrdered.push({ name: orderItem.name, value: orderItem.value });
-  }
+  const cart = getShoppingCart();
 
   // Prepare data to send
-  let data = { itemsOrdered };
+  let data = { cart };
   const formElements = Array.from(form);
 
   formElements.map(function(input) {
@@ -56,9 +52,6 @@ function handleOrder(e) {
   if (document.getElementById("honeypot").value) {
     window.location = "https://www.youtube.com/watch?v=QH2-TGUlwu4";
   }
-
-  // Log what our lambda function will receive
-  console.log(JSON.stringify(data));
 
   // Construct an HTTP request
   var xhr = new XMLHttpRequest();
@@ -73,7 +66,6 @@ function handleOrder(e) {
 
   // Callback function
   xhr.onloadend = function(response) {
-    console.log(response);
     if (response.target.status === 200) {
       // The form submission was successful
       form.reset();
@@ -111,28 +103,29 @@ function removeEmpties(obj) {
   return newObj;
 }
 
-function populateVeggieList() {
-  // TODO: switch tags from text to array of tags.
-  var firstRoundVeggies = [
+function getVeggies() {
+  return [
     {
       price: "3.00",
       title: "Tuscano Kale",
       description:
-        "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>. Known for its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
+        "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>, as well as its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
       img: "./img/crops/kale.jpg",
       tags: ["smoothies", "stirfrys", "salads"],
       id: "kale",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "3.00",
       title: "Galine Heirloom Italian Eggplant",
       description:
-        "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, contain an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
+        "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, containing an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
       img: "./img/crops/eggplant.jpg",
       tags: ["stirfrys", "pastas", "roasts", "curries"],
       id: "eggplant",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "3.00",
@@ -142,7 +135,8 @@ function populateVeggieList() {
       img: "./img/crops/chard.jpg",
       tags: ["sauteed", "salads", "bakes", "smoothies"],
       id: "chard",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "2.50",
@@ -152,7 +146,8 @@ function populateVeggieList() {
       img: "./img/crops/arugala.jpg",
       tags: ["salads", "pastas", "pizzas"],
       id: "arugala",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "3.50",
@@ -162,37 +157,41 @@ function populateVeggieList() {
       img: "./img/crops/beets.jpg",
       tags: ["salads", "juices", "smoothies"],
       id: "beets",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "2.50",
       title: "Acadia Spinach",
       description:
-        "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. These empower you to slow aging, reduce the risk of cancer, improve eye health, regulate blood pressure and promote heart health.",
+        "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. Spinach slows aging, reduces the risk of cancer, improves eye health, regulates blood pressure and promotes heart health.",
       img: "./img/crops/spinach.jpg",
       tags: ["pizzas", "omelettes", "smoothies", "juices", "salads"],
       id: "spinach",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "3.00",
       title: "Flash Collard Greens",
       description:
-        "These dark green smooth leaves rich in phyto-nutrients that combat various types of cancer, natural anti-bacterial and anti-virual properties, packed with Vitamin C, A, K, B-3, B-5, and riboflavin, and boast a an impressive essential minerals profile.",
+        "These dark green smooth leaves are rich in phyto-nutrients that combat various types of cancer, natural anti-bacterial and anti-virual properties, packed with Vitamin C, A, K, B-3, B-5, and riboflavin, and boast an impressive essential minerals profile.",
       img: "./img/crops/collard.jpg",
       tags: ["steamed", "sauteed", "stews"],
       id: "collards",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "3.50",
       title: "Easter Egg Radish",
       description:
-        "This beautiful multicolor mix are crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.",
+        "This beautiful multicolor mix is crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.",
       img: "./img/crops/radish.jpg",
       tags: ["salads", "stews", "roasts", "pickled"],
       id: "radish",
-      stocked: true
+      stocked: true,
+      round: 1
     },
     {
       price: "2.50",
@@ -202,11 +201,9 @@ function populateVeggieList() {
       img: "./img/crops/lettuce.jpg",
       tags: ["sandwiches", "salads", "juices"],
       id: "lettuce",
-      stocked: true
-    }
-  ];
-
-  var futureRounds = [
+      stocked: true,
+      round: 1
+    },
     {
       price: "1.50",
       title: "Hawaiian Lilikoi (Passionfruit)",
@@ -215,7 +212,8 @@ function populateVeggieList() {
       img: "./img/crops/lilikoi.jpg",
       tags: ["desserts", "punches", "juices", "smoothies", "drinks"],
       id: "",
-      stocked: false
+      stocked: false,
+      round: 2
     },
     {
       price: "5.00",
@@ -225,7 +223,8 @@ function populateVeggieList() {
       img: "./img/crops/papaya.jpg",
       tags: ["desserts", "salads", "juices", "smoothies"],
       id: "",
-      stocked: false
+      stocked: false,
+      round: 2
     },
     {
       price: "0.00",
@@ -235,16 +234,25 @@ function populateVeggieList() {
       img: "./img/crops/dream.jpg",
       tags: ["anything"],
       id: "",
-      stocked: false
+      stocked: false,
+      round: 2
     }
   ];
+}
 
+function populateVeggieList() {
   var firstRoundCards = document.getElementById("firstRoundCards");
   var futureRoundCards = document.getElementById("futureRoundCards");
 
+  var veggies = getVeggies();
+
   var cropCardsMap = {
-    firstRoundCards: firstRoundVeggies,
-    futureRoundCards: futureRounds
+    firstRoundCards: veggies.filter(function(veggie) {
+      return veggie.round === 1;
+    }),
+    futureRoundCards: veggies.filter(function(veggie) {
+      return veggie.round === 2;
+    })
   };
 
   var cardContainers = [firstRoundCards, futureRoundCards];
@@ -313,26 +321,28 @@ function handleQuantityChange() {
       selector.value = newQuantity;
     }
   }
+
+  updateTotalPrice();
 }
 
 function renderShoppingCartItem(item, quantity) {
   var li = document.getElementById("cart-item-" + item);
-
   var shoppingCart = document.getElementById("shopping-cart");
-
   var numberList = getArrayOfNumbers(50);
-
   var selected = function(x) {
     return x === parseInt(quantity) ? "selected" : "";
   };
+  var cssID = "cart-item-" + item;
 
-  var id = "cart-item-" + item;
+  var veggie = getVeggieById(item);
 
-  var quantitySelector =
+  var cartItem =
     "<select id='" +
-    id +
+    cssID +
     "' class='shopping-cart-item' name='" +
     item +
+    "' data-price='" +
+    veggie.price +
     "'>" +
     numberList.map(function(x) {
       return "<option value='" + x + "'" + selected(x) + ">" + x + "</option>";
@@ -340,13 +350,58 @@ function renderShoppingCartItem(item, quantity) {
     "</select> - " +
     capitalizeFirstLetter(item);
 
+  // TODO: WHY DOES THIS NOT UPDATE ON RENDERING?
+  //  +
+  // " at $" +
+  // veggie.price +
+  // "/pound = $" +
+  // multiply(veggie.price, quantity); //
+
   if (li) {
-    li.innerHTML = quantitySelector;
+    li.innerHTML = cartItem;
   } else {
-    shoppingCart.innerHTML += "<li>" + quantitySelector + "</li>";
+    shoppingCart.innerHTML += "<li>" + cartItem + "</li>";
 
     document
-      .getElementById(id)
+      .getElementById(cssID)
       .addEventListener("change", handleQuantityChange);
   }
+}
+
+function getVeggieById(id) {
+  var veggies = getVeggies();
+  return veggies.filter(function(veggie) {
+    return veggie.id === id;
+  })[0];
+}
+
+function getShoppingCart() {
+  const cart = [];
+  for (let orderItem of document.getElementsByClassName("shopping-cart-item")) {
+    cart.push({
+      name: orderItem.name,
+      value: orderItem.value,
+      price: getVeggieById(orderItem.name).price
+    });
+  }
+  return cart;
+}
+
+function updateTotalPrice() {
+  const cart = getShoppingCart();
+  const price = cart.map(function(item) {
+    return parseFloat(item.price) * parseFloat(item.value);
+  });
+
+  var sum = 0;
+
+  for (var i = 0; i < price.length; i++) {
+    sum += price[i];
+  }
+
+  document.getElementById("total-order-amount").innerHTML = "Total: $" + sum;
+}
+
+function multiply(a, b) {
+  return a * b;
 }
