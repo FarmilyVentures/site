@@ -53,9 +53,6 @@ function handleOrder(e) {
     window.location = "https://www.youtube.com/watch?v=QH2-TGUlwu4";
   }
 
-  // Log what our lambda function will receive
-  console.log(JSON.stringify(data));
-
   // Construct an HTTP request
   var xhr = new XMLHttpRequest();
   xhr.open(form.method, form.action, true);
@@ -69,7 +66,6 @@ function handleOrder(e) {
 
   // Callback function
   xhr.onloadend = function(response) {
-    console.log(response);
     if (response.target.status === 200) {
       // The form submission was successful
       form.reset();
@@ -245,8 +241,6 @@ function getVeggies() {
 }
 
 function populateVeggieList() {
-  // TODO: switch tags from text to array of tags.
-
   var firstRoundCards = document.getElementById("firstRoundCards");
   var futureRoundCards = document.getElementById("futureRoundCards");
 
