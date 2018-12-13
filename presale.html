@@ -38,10 +38,13 @@
     </nav>
 
     <div id="follow-cart-container">
-      <span id="shopping-cart-count"></span>
-      <a href="#checkout" class="follow-cart">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
+      <div class="shopping-cart-icon">
+        <span id="shopping-cart-count"></span>
+        <a href="#checkout" class="follow-cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </div>
+      <span id="total-order-amount"></span>
     </div>
 
     <div class="intro presale">
@@ -132,7 +135,6 @@
             Please verify and make changes below before submitting your order.
           </p>
           <ul id="shopping-cart"></ul>
-          <span id="total-order-amount"></span>
           <div class="divider center small"></div>
           <form
             action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer"

@@ -333,45 +333,48 @@ function handleQuantityChange() {
 
 function renderShoppingCartItem(item, quantity) {
   var li = document.getElementById("cart-item-" + item);
-
   var shoppingCart = document.getElementById("shopping-cart");
-
   var numberList = getArrayOfNumbers(50);
-
   var selected = function(x) {
     return x === parseInt(quantity) ? "selected" : "";
   };
+  var cssID = "cart-item-" + item;
 
-  var id = "cart-item-" + item;
+  var veggie = getVeggieById(item);
+  var price = quantity * veggie.price;
 
   var quantitySelector =
     "<select id='" +
-    id +
+    cssID +
     "' class='shopping-cart-item' name='" +
     item +
     "' data-price='" +
-    getVeggieById(item).price +
+    veggie.price +
     "'>" +
     numberList.map(function(x) {
       return "<option value='" + x + "'" + selected(x) + ">" + x + "</option>";
     }) +
     "</select> - " +
-    capitalizeFirstLetter(item);
+    capitalizeFirstLetter(item) +
+    " at $" +
+    veggie.price +
+    "/pound = $" +
+    price;
 
   if (li) {
+    li.innerHTML = "";
     li.innerHTML = quantitySelector;
   } else {
     shoppingCart.innerHTML += "<li>" + quantitySelector + "</li>";
 
     document
-      .getElementById(id)
+      .getElementById(cssID)
       .addEventListener("change", handleQuantityChange);
   }
 }
 
 function getVeggieById(id) {
   var veggies = getVeggies();
-  console.log(id);
   return veggies.filter(function(veggie) {
     return veggie.id === id;
   })[0];
@@ -380,11 +383,26 @@ function getVeggieById(id) {
 function getShoppingCart() {
   const cart = [];
   for (let orderItem of document.getElementsByClassName("shopping-cart-item")) {
-    cart.push({ name: orderItem.name, value: orderItem.value });
+    cart.push({
+      name: orderItem.name,
+      value: orderItem.value,
+      price: getVeggieById(orderItem.name).price
+    });
   }
   return cart;
 }
 
 function updateTotalPrice() {
   const cart = getShoppingCart();
+  const price = cart.map(function(item) {
+    return parseFloat(item.price) * parseFloat(item.value);
+  });
+
+  var sum = 0;
+
+  for (var i = 0; i < price.length; i++) {
+    sum += price[i];
+  }
+
+  document.getElementById("total-order-amount").innerHTML = "Total: $" + sum;
 }
