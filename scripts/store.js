@@ -341,9 +341,8 @@ function renderShoppingCartItem(item, quantity) {
   var cssID = "cart-item-" + item;
 
   var veggie = getVeggieById(item);
-  var price = quantity * veggie.price;
 
-  var quantitySelector =
+  var cartItem =
     "<select id='" +
     cssID +
     "' class='shopping-cart-item' name='" +
@@ -355,17 +354,19 @@ function renderShoppingCartItem(item, quantity) {
       return "<option value='" + x + "'" + selected(x) + ">" + x + "</option>";
     }) +
     "</select> - " +
-    capitalizeFirstLetter(item) +
-    " at $" +
-    veggie.price +
-    "/pound = $" +
-    price;
+    capitalizeFirstLetter(item);
+
+  // TODO: WHY DOES THIS NOT UPDATE ON RENDERING?
+  //  +
+  // " at $" +
+  // veggie.price +
+  // "/pound = $" +
+  // multiply(veggie.price, quantity); //
 
   if (li) {
-    li.innerHTML = "";
-    li.innerHTML = quantitySelector;
+    li.innerHTML = cartItem;
   } else {
-    shoppingCart.innerHTML += "<li>" + quantitySelector + "</li>";
+    shoppingCart.innerHTML += "<li>" + cartItem + "</li>";
 
     document
       .getElementById(cssID)
@@ -405,4 +406,8 @@ function updateTotalPrice() {
   }
 
   document.getElementById("total-order-amount").innerHTML = "Total: $" + sum;
+}
+
+function multiply(a, b) {
+  return a * b;
 }
