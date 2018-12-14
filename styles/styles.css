@@ -168,7 +168,8 @@ form {
 }
 
 form input,
-form select {
+form select,
+form textarea {
   margin-bottom: 12px;
 }
 
