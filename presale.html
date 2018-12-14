@@ -40,7 +40,7 @@
     <div id="follow-cart-container">
       <div class="shopping-cart-icon">
         <span id="shopping-cart-count"></span>
-        <a href="#checkout" class="follow-cart">
+        <a href="#form" class="follow-cart">
           <i class="fas fa-shopping-cart"></i>
         </a>
       </div>
@@ -80,7 +80,7 @@
             us know when you fill out the preorder form ;)
           </p>
         </section>
-        <section>
+        <section id="form">
           <h4 class="section-heading center">Presale Order Form</h4>
           <p>
             Please read the <strong>Important Notices</strong>, complete the
@@ -96,6 +96,7 @@
               We only offer pickup and delivery for the island of Oahu, Hawaii
               at the current time.
             </li>
+            <li>We charge cash, credit or debit upon delivery/pickup.</li>
             <li>
               If you cancel your presale order there will be $5 cancellation fee
               for miscalculations.
@@ -162,6 +163,17 @@
               <input name="tel" type="tel" required autocomplete="tel" />
             </label>
 
+            <label class="small">
+              How Often Do You Want Your Veggie Box?
+              <select name="frequency" id="consultTopic" required>
+                <option value="weekly">Weekly</option>
+                <option value="twice-weekly">Twice Weekly</option>
+                <option value="bi-weekly">Every Other Week</option>
+                <option value="monthly">Once Monthly</option>
+                <option value="other">Other (Please describe)</option>
+              </select>
+            </label>
+
             <label>
               Details:
               <textarea
@@ -171,16 +183,6 @@
                 style="height: 100px"
                 autocomplete=""
               ></textarea>
-            </label>
-            <label class="small">
-              How Often Do You Want Your Veggie Box?:
-              <select name="frequency" id="consultTopic" required>
-                <option value="weekly">Weekly</option>
-                <option value="twice-weekly">Twice Weekly</option>
-                <option value="bi-weekly">Every Other Week</option>
-                <option value="monthly">Once Monthly</option>
-                <option value="other">Other (Please describe)</option>
-              </select>
             </label>
             <label
               style="display: flex; align-items: center; justify-content: flex-start; margin: 0 0 16px 0;"
