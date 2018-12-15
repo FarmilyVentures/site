@@ -195,6 +195,41 @@
   font-size: 88%;
 }
 
+.card-holder .card.small {
+  display: flex;
+  border-radius: 0;
+}
+
+.card-holder .card.small .price-tag {
+  border-radius: 0;
+  position: initial;
+
+  min-width: 172px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card-holder .card.small .inner {
+  padding: 8px;
+}
+
+.card-holder .card.small h5 {
+  font-size: 16px !important;
+}
+
+.card-holder .card.small img {
+  height: 80px;
+  width: 80px;
+}
+
+.card-holder .card.small p,
+.card-holder .card.small ul,
+.card-holder .card.small img {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .intro.presale h3 {
     font-size: 64px !important;
@@ -219,78 +254,97 @@
   color: white;
   background: #138d90;
 }
+
 .curries {
   color: white;
   background: #001871;
 }
+
 .bakes {
   color: white;
   background: #43bcff;
 }
+
 .pizzas {
   color: white;
   background: #ffb743;
 }
+
 .omelettes {
   color: white;
   background: #e95b4f;
 }
+
 .steamed {
   color: white;
   background: #230827;
 }
+
 .sauteed {
   color: white;
   background: #491647;
 }
+
 .stews {
   color: white;
   background: #7c265e;
 }
+
 .sandwiches {
   color: black;
   background: #ff5454;
 }
+
 .salads {
   color: black;
   background: #ff813c;
 }
+
 .roasts {
   color: white;
   background: #8bc24c;
 }
+
 .pickled {
   color: white;
   background: #194f90;
 }
+
 .punches {
   color: black;
   background: #f6d04d;
 }
+
 .drinks {
   color: white;
   background: #f29c2b;
 }
+
 .desserts {
   color: white;
   background: #de4307;
 }
+
 .salads {
   color: white;
   background: #ff3366;
 }
+
 .juices {
   color: white;
   background: #33cc99;
 }
+
 .smoothies {
   color: white;
   background: #66ccff;
 }
+
 .anything {
   color: white;
   background: #2e4ea7;
 }
+
 .pastas {
   color: white;
   background: #f97e77;
@@ -314,4 +368,26 @@
 .card .button-container .crop-count {
   font-size: 125% !important;
   margin: 0;
+}
+
+#toolbar {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+
+  padding: 16px;
+  margin: 16px 0;
+
+  border-top: 1px solid rgb(192, 192, 192, 0.2);
+  border-bottom: 1px solid rgb(192, 192, 192, 0.2);
+}
+
+#toolbar button {
+  font-size: 24px;
+  color: grey;
+}
+
+#toolbar button.active {
+  color: #5ecc62;
 }

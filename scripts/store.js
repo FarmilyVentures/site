@@ -28,7 +28,11 @@ function setEventListeners() {
 
   for (let selector of document.getElementsByClassName("crop-selector")) {
     selector.addEventListener("change", handleQuantityChange);
-    // TODO, how to get from storage and update shopping cart?
+    // TODO: how to get from storage and update shopping cart?
+  }
+
+  for (let selector of document.getElementsByClassName("toggle-card-size")) {
+    selector.addEventListener("click", toggleCardSizes);
   }
 }
 
@@ -107,7 +111,7 @@ function getVeggies() {
   return [
     {
       price: "3.00",
-      title: "Tuscano Kale",
+      title: "Kale",
       description:
         "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>, as well as its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
       img: "./img/crops/kale.jpg",
@@ -118,7 +122,7 @@ function getVeggies() {
     },
     {
       price: "3.00",
-      title: "Galine Heirloom Italian Eggplant",
+      title: "Eggplant",
       description:
         "Scientifically known as Solanum melongena, the Galine Italian has a rich purple black lustor, containing an impressive array of life sustaining vitmains and minerals, known for promoting gut health, bone and heart health, as well as improving brain function.",
       img: "./img/crops/eggplant.jpg",
@@ -129,7 +133,7 @@ function getVeggies() {
     },
     {
       price: "3.00",
-      title: "Orange Ribbed Swiss Chard",
+      title: "Swiss Chard",
       description:
         "Rich orange attractive stems and savoyed leaves, Orange Ribbed Swiss Chard is known for its exceptional levels of dietary fiber, Vitamin A, K, Iron and antioxidants while defending against cancer, improving cognitive function and cleansing blood circulation.",
       img: "./img/crops/chard.jpg",
@@ -140,7 +144,7 @@ function getVeggies() {
     },
     {
       price: "2.50",
-      title: "Astro Arugala",
+      title: "Arugala",
       description:
         "Vibrant green leaves with a mild spice, known for its impressive vitamin and mineral spread, known for its ability to boost the immune system, slow aging, increase metabolism and general overall health from its high Vitamin A content.",
       img: "./img/crops/arugala.jpg",
@@ -151,7 +155,7 @@ function getVeggies() {
     },
     {
       price: "3.50",
-      title: "Early Wonder, Detroit Red and Touchstone Gold Beets",
+      title: "Beets",
       description:
         "Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.",
       img: "./img/crops/beets.jpg",
@@ -162,7 +166,7 @@ function getVeggies() {
     },
     {
       price: "2.50",
-      title: "Acadia Spinach",
+      title: "Spinach",
       description:
         "These beautiful, dark, glossy oval shaped leaves are high in Vitamins A, C, K1, B-6, B-9, folic acid, iron, calcium and more. Spinach slows aging, reduces the risk of cancer, improves eye health, regulates blood pressure and promotes heart health.",
       img: "./img/crops/spinach.jpg",
@@ -173,7 +177,7 @@ function getVeggies() {
     },
     {
       price: "3.00",
-      title: "Flash Collard Greens",
+      title: "Collard Greens",
       description:
         "These dark green smooth leaves are rich in phyto-nutrients that combat various types of cancer, natural anti-bacterial and anti-virual properties, packed with Vitamin C, A, K, B-3, B-5, and riboflavin, and boast an impressive essential minerals profile.",
       img: "./img/crops/collard.jpg",
@@ -184,7 +188,7 @@ function getVeggies() {
     },
     {
       price: "3.50",
-      title: "Easter Egg Radish",
+      title: "Radish",
       description:
         "This beautiful multicolor mix is crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.",
       img: "./img/crops/radish.jpg",
@@ -195,7 +199,7 @@ function getVeggies() {
     },
     {
       price: "2.50",
-      title: "Sylvestia Lettuce",
+      title: "Lettuce",
       description:
         "These thick flavorful leaves boast impressive health benefits, including being an anti-inflammitory agent, protector of neuronal cells, cholestoral fighter, sleep aid, cancer fighter, anxiety controller and anti-microbial defenses.",
       img: "./img/crops/lettuce.jpg",
@@ -206,7 +210,7 @@ function getVeggies() {
     },
     {
       price: "1.50",
-      title: "Hawaiian Lilikoi (Passionfruit)",
+      title: "Passionfruit",
       description:
         "These delicious fruits native to Hawaii are packed with an extremely impressive array of vitamins and minerals critical for a healthy existence. Boosting immunity, preventing cancer, aiding digestion, reducing blood pressure and more, Lilikoi are the perfect treat.",
       img: "./img/crops/lilikoi.jpg",
@@ -217,7 +221,7 @@ function getVeggies() {
     },
     {
       price: "5.00",
-      title: "Kamiya Laie Gold Papaya",
+      title: "Papaya",
       description:
         "A delicious gift to the world, the Kamiya Laie Gold Papaya will leave you glowing with its high dietary fiber content, immune boosting and anti-inflammitory agents, anti aging and skin care nutrients, as well as overall bodily fluid hardiness and health. The seeds are also endowed with magical properties.",
       img: "./img/crops/papaya.jpg",
@@ -404,4 +408,22 @@ function updateTotalPrice() {
 
 function multiply(a, b) {
   return a * b;
+}
+
+// TODO: accept size here to overrride newStyle from localStorage.
+function toggleCardSizes() {
+  const newStyle = this.dataset.size;
+  const oldStyle = newStyle === "small" ? "big" : "small";
+  for (let card of document.getElementsByClassName("card")) {
+    card.classList.remove(oldStyle);
+    card.classList.add(newStyle);
+  }
+
+  for (let toggleButton of document.getElementsByClassName(
+    "toggle-card-size"
+  )) {
+    toggleButton.dataset.size === newStyle
+      ? toggleButton.classList.add("active")
+      : toggleButton.classList.remove("active");
+  }
 }
