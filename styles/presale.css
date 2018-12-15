@@ -7,10 +7,10 @@
 
   background: #5ecc62;
   border-radius: 8px;
-  padding: 0;
+  padding: 8px;
 
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   text-align: center;
 
   display: none;
@@ -23,8 +23,15 @@
   }
 }
 
-.shopping-cart-icon {
+#follow-cart-container.shown {
+  display: flex;
+  z-index: 9;
+}
+
+#follow-cart-container a {
+  color: white;
   position: relative;
+  font-size: 24px;
 }
 
 #shopping-cart-count {
@@ -48,15 +55,8 @@
   font-weight: bold;
 }
 
-#follow-cart-container.shown {
-  display: flex;
-  z-index: 9;
-}
-
-#follow-cart-container a {
-  color: white;
+.shopping-cart-icon {
   position: relative;
-  font-size: 24px;
 }
 
 #total-order-amount {
