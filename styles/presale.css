@@ -105,6 +105,15 @@
   width: 95% !important;
 }
 
+.info form .button i {
+  display: none;
+  margin-right: 8px;
+}
+
+.info form .button.loading i {
+  display: inherit;
+}
+
 .card-holder {
   display: flex;
   flex-wrap: wrap;
