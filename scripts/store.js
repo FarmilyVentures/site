@@ -36,6 +36,16 @@ function setEventListeners() {
 	}
 }
 
+function handlePaymentChoice(a) {
+	var choiceMap = {
+		venmo: 'Please enter your valid Venmo Username in the Details section below!',
+		crypto: 'Please enter your cryptocurrency of choice (Coinbase options only)',
+		cash: 'Please have cash ready on pickup or delivery, thank you!'
+	};
+
+	document.getElementById('form-payment-notification').innerHTML = choiceMap[a.value];
+}
+
 // email form for consulting handling
 function handleOrder(e) {
 	var button = document.getElementById('submit-button');

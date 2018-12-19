@@ -97,7 +97,8 @@
             We only offer pickup and delivery for the island of Oahu, Hawaii
             at the current time.
           </li>
-          <li>We charge cash, credit or debit upon delivery/pickup.</li>
+          <li>Accepted payment methods include cash, Venmo, or any <a href="https://www.coinbase.com/join/529642cd0133706fc9000a5a"
+              target="_blank">cryptocurrency available at Coinbase</a>.</li>
         </ul>
         <h5 id="checkout" class="center">Shopping Cart</h5>
         <div class="divider center small"></div>
@@ -156,6 +157,17 @@
               <option value="other">Other (Please describe)</option>
             </select>
           </label>
+
+          <label>
+            Preferred Method of Payment
+            <select onchange="handlePaymentChoice(this)" name="payment" id="paymentChoice" required>
+              <option value="cash">Cash</option>
+              <option value="venmo">Venmo</option>
+              <option value="crypto">Cryptocurrency</option>
+            </select>
+            <span style="margin-bottom: 8px;font-size: 14px" class="success" id="form-payment-notification"></span>
+          </label>
+
 
           <label>
             Details:

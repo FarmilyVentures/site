@@ -58,15 +58,16 @@ h4 {
   font-size: 140%;
 }
 
-#js-form-response {
+#js-form-response,
+#form-payment-notification {
   font-weight: bold;
 }
 
-#js-form-response.success {
+.success {
   color: #5ecc62;
 }
 
-#js-form-response.error {
+.error {
   color: #ff0000;
 }
 
