@@ -168,6 +168,18 @@
             <span style="margin-bottom: 8px;font-size: 14px" class="success" id="form-payment-notification"></span>
           </label>
 
+          <label>
+            Optional: How'd You Find Us?
+            <select onchange="handleSource(this)" name="source" id="sourceChoice" required>
+              <option value="fb" disabled selected>We would love to know!</option>
+              <option value="fb">Facebook</option>
+              <option value="ig">Instagram</option>
+              <option value="word">Word of Mouth</option>
+              <option value="flyer">Flyer</option>
+              <option value="search">Google/Other Search Engine</option>
+              <option value="other">Other (Details below please!)</option>
+            </select>
+          </label>
 
           <label>
             Details:
