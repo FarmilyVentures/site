@@ -366,6 +366,7 @@ form .inline-form-section label:last-of-type {
 
 .intro .button-container {
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .intro .button-container button,
@@ -379,18 +380,12 @@ form .inline-form-section label:last-of-type {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
 	margin: 0 auto;
+	flex-direction: row;
 }
 
 .button-container .button:first-of-type {
 	margin-left: 0;
-}
-
-@media (min-width: 450px) {
-	.button-container {
-		flex-direction: row;
-	}
 }
 
 @media (min-width: 768px) {
@@ -581,6 +576,14 @@ footer {
 #farm .inner-container .info {
 	margin-bottom: 16px;
 	color: white;
+	text-align: center;
+}
+
+
+#farm .inner-container .info ul {
+	margin-bottom: 16px;
+	color: white;
+	text-align: left;
 }
 
 #farm .inner-container .info h3 {
@@ -601,5 +604,6 @@ footer {
 	#farm .inner-container .info {
 		margin-right: 16px;
 		margin-bottom: 0;
+		text-align: left;
 	}
 }
