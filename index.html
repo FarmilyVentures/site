@@ -1,176 +1,155 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Farmily Ventures | Aīna, Pono, Aloha, Ohana with Mana.</title>
-    <meta name="description" content="" />
-    <meta
-      name="google-site-verification"
-      content="W3WFQYqq-7Im4U-CUH1scS8DD2kyQm9AMOLhYmIlA6c"
-    />
-    <meta name="author" content="@farmily.ventures" />
-    <meta name="keywords" content="" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?" />
-    <link rel="manifest" href="manifest.json" />
-    <link href="./styles/styles.css" rel="stylesheet" />
-    <link href="./styles/animate.css" rel="stylesheet" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <div id="mobileMenu">
-      <button class="closeButton" id="closeMenu">
-        <i class="fas fa-times"></i>
-      </button>
-      <a href="#">Home</a> <a href="#about">Mission</a>
-      <button data-type="" class="button consultingButton" href="#consult">
-        Contact Us!
-      </button>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmily Ventures | Aīna, Pono, Aloha, Ohana with Mana.</title>
+  <meta name="description" content="" />
+  <meta name="google-site-verification" content="W3WFQYqq-7Im4U-CUH1scS8DD2kyQm9AMOLhYmIlA6c" />
+  <meta name="author" content="@farmily.ventures" />
+  <meta name="keywords" content="" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?" />
+  <link rel="manifest" href="manifest.json" />
+  <link href="./styles/styles.css" rel="stylesheet" />
+  <link href="./styles/animate.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous" />
+</head>
 
-    <div id="consultingPopup">
-      <button class="closeButton" id="closeConsulting">
-        <i class="fas fa-times"></i>
-      </button>
-      <form
-        id="consulting-form"
-        action="https://3sy8fq80zl.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer"
-        method="POST"
-      >
-        <div style="display:none;">
-          <label>Keep this field blank</label>
-          <input type="text" name="honeypot" id="honeypot" />
-        </div>
+<body>
+  <div id="mobileMenu">
+    <button class="closeButton" id="closeMenu">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="#">Home</a> <a href="#about">Mission</a>
+    <button data-type="" class="button consultingButton" href="#consult">
+      Contact Us!
+    </button>
+  </div>
 
-        <label>
-          Name: <input name="contact" id="" type="text" required />
-        </label>
-
-        <label>
-          Email: <input name="from" id="" type="email" required />
-        </label>
-
-        <label>
-          Subject:
-          <select name="subject" id="consultTopic" required>
-            <option value="help" disabled selected>General Inquiries</option>
-            <option value="home_garden">Custom Home Garden Solutions</option>
-            <option value="veggie_box">Custom Veggie Box Options</option>
-            <option value="volunteer">Volunteering</option>
-            <option value="wwoofing">WWOOFING</option>
-            <option value="events">Events</option>
-            <option value="business">Business Order Requests</option>
-            <option value="help">Help</option>
-            <option value="sponsor">Sponsorship</option>
-            <option value="other">Other</option>
-          </select>
-        </label>
-
-        <label>
-          Details:
-          <textarea
-            name="body"
-            id=""
-            placeholder="Aloha! Please fill in any information related to this message so that we can best assist you! Mahalo!"
-            required
-          ></textarea>
-        </label>
-
-        <button class="button">Submit</button>
-      </form>
-      <p id="js-form-response"></p>
-    </div>
-
-    <nav class="header" id="customHeader">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">Mission</a></li>
-        <li>
-          <a data-type="" class="button consultingButton" href="#consult"
-            >Contact</a
-          >
-        </li>
-      </ul>
-
-      <button id="hamburger"><i class="fas fa-bars"></i></button>
-    </nav>
-
-    <div class="intro">
-      <div class="description">
-        <img style="max-width: 80vw; margin-bottom: 0;" src="./img/logo.png" />
+  <div id="consultingPopup">
+    <button class="closeButton" id="closeConsulting">
+      <i class="fas fa-times"></i>
+    </button>
+    <form id="consulting-form" action="https://3sy8fq80zl.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer"
+      method="POST">
+      <div style="display:none;">
+        <label>Keep this field blank</label>
+        <input type="text" name="honeypot" id="honeypot" />
       </div>
-      <div class="button-container">
-        <button data-type="" class="button primary consultingButton">
-          Contact Us
-        </button>
-        <a href="./presale.html" class="button gold-baby"
-          ><i class="fas fa-box-open"></i> Veggie Box Presale
+
+      <label>
+        Name: <input name="contact" id="" type="text" required />
+      </label>
+
+      <label>
+        Email: <input name="from" id="" type="email" required />
+      </label>
+
+      <label>
+        Subject:
+        <select name="subject" id="consultTopic" required>
+          <option value="help" disabled selected>General Inquiries</option>
+          <option value="home_garden">Custom Home Garden Solutions</option>
+          <option value="veggie_box">Custom Veggie Box Options</option>
+          <option value="volunteer">Volunteering</option>
+          <option value="wwoofing">WWOOFING</option>
+          <option value="events">Events</option>
+          <option value="business">Business Order Requests</option>
+          <option value="help">Help</option>
+          <option value="sponsor">Sponsorship</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+
+      <label>
+        Details:
+        <textarea name="body" id="" placeholder="Aloha! Please fill in any information related to this message so that we can best assist you! Mahalo!"
+          required></textarea>
+      </label>
+
+      <button class="button">Submit</button>
+    </form>
+    <p id="js-form-response"></p>
+  </div>
+
+  <nav class="header" id="customHeader">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">Mission</a></li>
+      <li>
+        <a data-type="" class="button consultingButton" href="#consult">Contact</a>
+      </li>
+    </ul>
+
+    <button id="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <div class="intro">
+    <div class="description">
+      <img style="max-width: 80vw; margin-bottom: 0;" src="./img/logo.png" />
+    </div>
+    <div class="button-container">
+      <button data-type="" class="button primary consultingButton">
+        Contact Us
+      </button>
+      <a href="./presale.html" class="button gold-baby"><i class="fas fa-box-open"></i> Veggie Box Presale
+      </a>
+    </div>
+  </div>
+
+  <div id="about">
+    <div class="description">
+      <div class="poloroid">
+        <img id="missionImg" src="./img/2.jpeg" />
+        <p id="missionCaption"></p>
+      </div>
+      <div class="ps">
+        <h3>Our Mission</h3>
+        <p>
+          The Mission of Alohawai Farm is to be the leading local organic
+          produce supplier to Oahu. We will build community through education,
+          food accessibility, and by being a model of appropriate land
+          stewardship and sustainable organic agricultural techniques.
+        </p>
+      </div>
+    </div>
+    <ul class="social-links">
+      <li>
+        <a target="_blank" href="https://www.github.com/FarilyVentures/">
+          <i class="fab fa-github"></i>
         </a>
-      </div>
-    </div>
+      </li>
+      <li>
+        <a target="_blank" href="https://instagram.com/farmily.ventures">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://goo.gl/maps/guE9uFCcEg62">
+          <i class="fas fa-map-marked-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-    <div id="about">
-      <div class="description">
-        <div class="poloroid">
-          <img id="missionImg" src="./img/2.jpeg" />
-          <p id="missionCaption"></p>
-        </div>
-        <div class="ps">
-          <h3>Our Mission</h3>
-          <p>
-            The Mission of Alohawai Farm is to be the leading local organic
-            produce supplier to Oahu. We will build community through education,
-            food accessibility, and by being a model of appropriate land
-            stewardship and sustainable organic agricultural techniques.
-          </p>
-        </div>
-      </div>
-      <ul class="social-links">
-        <li>
-          <a target="_blank" href="https://www.github.com/FarilyVentures/">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://instagram.com/farmily.ventures">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://goo.gl/maps/guE9uFCcEg62">
-            <i class="fas fa-map-marked-alt"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+  <footer>
+    <p>
+      &#169; Copyright Farmily Ventures 2018, site by
+      <a href="https://awitherow.com" target="_blank">Austin Witherow</a>
+    </p>
+  </footer>
 
-    <footer>
-      <p>
-        &#169; Copyright Farmily Ventures 2018, site by
-        <a href="https://awitherow.com" target="_blank">Austin Witherow</a>
-      </p>
-    </footer>
+  <!-- scripts -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script type="text/javascript" src="./scripts/scripts.js"></script>
+  <script type="text/javascript">
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
+</body>
 
-    <!-- scripts -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"
-    ></script>
-    <script type="text/javascript" src="./scripts/scripts.js"></script>
-    <script type="text/javascript">
-      var scroll = new SmoothScroll('a[href*="#"]');
-    </script>
-  </body>
 </html>
