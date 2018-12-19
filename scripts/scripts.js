@@ -58,7 +58,7 @@ function closeMenu() {
   enableScroll();
   var mobileMenu = document.getElementById("mobileMenu");
   mobileMenu.classList.add("fadeOut");
-  setTimeout(function() {
+  setTimeout(function () {
     mobileMenu.classList.remove("shown", "bounceIn", "fadeOut");
   }, 500);
 }
@@ -91,7 +91,7 @@ function closeConsulting() {
   console.log("closing consultingPopup");
   var consultingPopup = document.getElementById("consultingPopup");
   consultingPopup.classList.add("fadeOut");
-  setTimeout(function() {
+  setTimeout(function () {
     consultingPopup.classList.remove("shown", "bounceIn", "fadeOut");
   }, 500);
 }
@@ -106,7 +106,7 @@ function handleForm(e) {
   let data = {};
   const formElements = Array.from(form);
 
-  formElements.map(function(input) {
+  formElements.map(function (input) {
     data[input.name] = input.value;
   });
 
@@ -131,7 +131,7 @@ function handleForm(e) {
   const formResponse = document.getElementById("js-form-response");
 
   // Callback function
-  xhr.onloadend = function(response) {
+  xhr.onloadend = function (response) {
     if (response.target.status === 200) {
       // The form submission was successful
       form.reset();
@@ -152,48 +152,10 @@ function handleForm(e) {
 // remove empty key/value pairs from objects
 function removeEmpties(obj) {
   var newObj = {};
-  Object.keys(obj).forEach(function(prop) {
+  Object.keys(obj).forEach(function (prop) {
     if (obj[prop]) {
       newObj[prop] = obj[prop];
     }
   });
   return newObj;
-}
-
-function setMissionImage() {
-  var images = [
-    {
-      num: 1,
-      caption: "beets and beards"
-    },
-
-    {
-      num: 2,
-      caption: "kaipo cuddles"
-    },
-
-    {
-      num: 3,
-      caption: "sexy kale"
-    },
-    {
-      num: 4,
-      caption: "sean the man with a plan"
-    },
-    {
-      num: 5,
-      caption: "naps and hydration lead to enlightenment"
-    },
-    {
-      num: 6,
-      caption: "harvest time!"
-    }
-  ];
-
-  var placeholder = document.getElementById("missionImg");
-  var caption = document.getElementById("missionCaption");
-  var imagesAvailable = images.length; // can we programatically do this via "img/slides" folder?
-  var rand = Math.floor(Math.random() * imagesAvailable) + 1;
-  placeholder.src = "./img/slides/" + rand + ".jpeg";
-  caption.innerHTML = images[rand - 1].caption;
 }

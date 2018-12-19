@@ -196,7 +196,7 @@
 
 .card-holder .card h5 {
   margin: 0;
-  font-family: "Permanent Marker", Courier, monospace;
+  font-family: "Lucida Console", Courier, monospace !important;
   font-size: 20px !important;
 }
 
