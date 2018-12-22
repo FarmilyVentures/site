@@ -2,7 +2,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>Farmily Ventures | Caring for Self, The Land and Ohana.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmily Ventures | Caring for Self, The Land and Ohana.</title>
   <meta name="description" content="Farmily Ventures operates out of Mokuleia, Oahu, providing fresh, organic and sustainable produce to the individuals, families, vendors and more!" />
   <meta name="keywords" content="farm, sustainability, organic, local, oahu, mokuleia, northshore, hawaii" />
   <meta name="author" content="@farmily.ventures" />
@@ -55,14 +56,20 @@
           Farm.
         </p>
         <div id="toolbar">
-          <span class="card-size">
+          <div class="filters">
+            <div class="filter-container">
+              <h5 class="filter-label">Filter By Use</h5>
+              <select onchange="filterSortByUse(this)" class="filter" id="sortByUse"></select>
+            </div>
+          </div>
+          <div class="card-size">
             <button class="toggle-card-size active" data-size="big">
               <i class="fas fa-image"></i>
             </button>
             <button class="toggle-card-size" data-size="small">
               <i class="fas fa-list-alt"></i>
             </button>
-          </span>
+          </div>
         </div>
         <h5 class="center">First Round Crop List</h5>
         <div class="divider center small"></div>
