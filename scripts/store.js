@@ -5,6 +5,8 @@
 // 4. populateVeggieList - render veggie cards
 // 5. handleQuantityChange - updates UI of deisred shopping cart item.
 // 6. renderShoppingCartItem - updates order form quantities of veggies above form
+// 7. populateSortByUse - populates choices for sort by use dropdown
+// 8. filterSortByUse - fiters and renders veggie list based on what type.
 
 function getArrayOfNumbers(limit) {
 	return Array.from(Array(limit + 1), function (_, x) {
@@ -19,6 +21,7 @@ function capitalizeFirstLetter(string) {
 (function startup() {
 	populateVeggieList();
 	setEventListeners();
+	populateSortByUse();
 })();
 
 function setEventListeners() {
@@ -247,7 +250,7 @@ function getVeggies() {
 	];
 }
 
-function populateVeggieList() {
+function populateVeggieList(customFilter) {
 	var firstRoundCards = document.getElementById('firstRoundCards');
 	var futureRoundCards = document.getElementById('futureRoundCards');
 
@@ -423,4 +426,42 @@ function toggleCardSizes() {
 			toggleButton.classList.add('active') :
 			toggleButton.classList.remove('active');
 	}
+}
+
+function populateSortByUse() {
+	var veggies = getVeggies();
+	var uses = [];
+
+	veggies.map(function (veg) {
+		veg.tags.map(function (tag) {
+			!uses.includes(tag) && uses.push(tag)
+		})
+	});
+
+	var filter = document.getElementById("sortByUse")
+
+	uses.sort().map(function (use) {
+		filter.innerHTML += "<option name='" + use + "'>" + capitalizeFirstLetter(use) + "</option>"
+	})
+}
+
+function uniq(a) {
+	var prims = {
+			"boolean": {},
+			"number": {},
+			"string": {}
+		},
+		objs = [];
+
+	return a.filter(function (item) {
+		var type = typeof item;
+		if (type in prims)
+			return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
+		else
+			return objs.indexOf(item) >= 0 ? false : objs.push(item);
+	});
+}
+
+function filterSortByUse(a) {
+	populateVeggieList(a.value.toLowerCase());
 }
