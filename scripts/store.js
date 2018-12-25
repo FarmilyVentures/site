@@ -170,7 +170,7 @@ function getVeggies() {
 			round: 1
 		},
 		{
-			price: '3.50',
+			price: '3.00',
 			title: 'Beets',
 			description:
 				'Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.',
@@ -203,7 +203,7 @@ function getVeggies() {
 			round: 1
 		},
 		{
-			price: '3.50',
+			price: '3.00',
 			title: 'Radish',
 			description:
 				'This beautiful multicolor mix is crisp and mild, packed with Vitamins A, C, potassium, zinc and dietary fiber. They also contain enzymes such as myrosinase, diastase, esterases, and amylase which have anti-fungal properties and are known to promote digestive health.',
@@ -221,6 +221,17 @@ function getVeggies() {
 			img: './img/crops/lettuce.jpg',
 			tags: [ 'sandwiches', 'salads', 'juices' ],
 			id: 'lettuce',
+			stocked: true,
+			round: 1
+		},
+		{
+			price: '2.50',
+			title: 'Bok Choy',
+			description:
+				'Bok Choy is a light and nutritous supergreen with high levels of Antioxidants that specifically promote skin and eye health, fight cancer, reduce negative inflammitory effects on the body, and has a wide spread of healthy doses of ones daily vitamin requirements.',
+			img: './img/crops/bokchoy.jpg',
+			tags: [ 'stirfrys', 'smoothies', 'juices' ],
+			id: 'bokchoy',
 			stocked: true,
 			round: 1
 		},
