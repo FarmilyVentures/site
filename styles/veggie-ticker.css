@@ -1,0 +1,44 @@
+.veggie-ticker-container {
+	padding: 16px;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+.veggie-ticker-container h2 {
+	color: white;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#veggie-ticker,
+.ticker-card {
+	display: flex;
+}
+
+#veggie-ticker {
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+}
+
+.ticker-card {
+	align-items: center;
+	justify-content: center;
+	min-width: 160px;
+	height: 80px;
+	margin: 24px;
+}
+
+.ticker-card:first-of-type {
+	margin-left: 0;
+}
+
+.ticker-card h3 {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0 8px;
+	color: white;
+	text-decoration-color: #5ecc62;
+}

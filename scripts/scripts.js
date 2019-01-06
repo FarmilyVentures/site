@@ -9,7 +9,7 @@
 
 (function runStartupShit() {
 	spawnEventListeners();
-	console.log('hello');
+	loadVeggieTicker();
 })();
 
 //
@@ -164,4 +164,17 @@ function removeEmpties(obj) {
 		}
 	});
 	return newObj;
+}
+
+function loadVeggieTicker() {
+	var veggies = getVeggies();
+	var tickerContainer = document.getElementById('veggie-ticker');
+
+	veggies.filter(function(veggie){ return veggie.round === 1}).map(function(veggie) {
+		console.log(veggie);
+		tickerContainer.innerHTML +=
+			"<a href='./sale.html' class='ticker-card' style='background: url(img/crops/"  + veggie.id + ".jpg); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;'><h3>" +
+			veggie.title +
+			'</h3></a>';
+	});
 }
