@@ -579,6 +579,14 @@ footer {
 	text-align: center;
 }
 
+#farm .inner-container .info a {
+	color: #5ecc62;
+}
+
+#farm .inner-container .info a.button {
+	color: white;
+}
+
 
 #farm .inner-container .info ul {
 	margin-bottom: 16px;
