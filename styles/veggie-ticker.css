@@ -6,8 +6,7 @@
 
 .veggie-ticker-container h2 {
 	color: white;
-	margin-bottom: 0;
-	padding-bottom: 0;
+	text-align: center;
 }
 
 #veggie-ticker,
@@ -17,10 +16,9 @@
 
 #veggie-ticker {
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-direction: row;
-	flex-wrap: nowrap;
-	overflow-x: scroll;
+	flex-wrap: wrap;
 }
 
 .ticker-card {
@@ -28,17 +26,14 @@
 	justify-content: center;
 	min-width: 160px;
 	height: 80px;
-	margin: 24px;
-}
-
-.ticker-card:first-of-type {
-	margin-left: 0;
+	margin: 16px;
 }
 
 .ticker-card h3 {
 	text-align: center;
 	text-transform: uppercase;
-	padding: 0 8px;
+	padding: 0 4px;
 	color: white;
+	background-color: rgba(0,0,0,0.8);
 	text-decoration-color: #5ecc62;
 }
