@@ -130,63 +130,48 @@ function removeEmpties(obj) {
 }
 
 function populateVeggieList() {
-	var firstRoundCards = document.getElementById('firstRoundCards');
-	var futureRoundCards = document.getElementById('futureRoundCards');
+	var veggies = getVeggies(true);
 
-	var veggies = getVeggies();
+	veggies.map(function(veggie) {
+		const container = document.getElementById(
+			veggie.stocked ? 'stocked' : 'future',
+		);
 
-	var cropCardsMap = {
-		firstRoundCards: veggies.filter(function(veggie) {
-			return veggie.round === 1;
-		}),
-		futureRoundCards: veggies.filter(function(veggie) {
-			return veggie.round === 2;
-		}),
-	};
+		var tags =
+			"<ul class='tag-list'>" +
+			veggie['tags'].map(function(tag) {
+				var cname = tag.replace(' ', '-');
+				return "<li class='tag " + cname + "'>" + tag + '</li>';
+			}) +
+			'</ul>';
 
-	var cardContainers = [
-		firstRoundCards,
-		futureRoundCards,
-	];
+		tags = tags.replace(/,/g, '');
 
-	cardContainers.map(function(container) {
-		cropCardsMap[container.id].map(function(crop) {
-			var tags =
-				"<ul class='tag-list'>" +
-				crop['tags'].map(function(tag) {
-					var cname = tag.replace(' ', '-');
-					return "<li class='tag " + cname + "'>" + tag + '</li>';
+		var numberList = getArrayOfNumbers(50);
+
+		var quantity = veggie.stocked
+			? "<select class='crop-selector' name=" +
+				veggie.id +
+				'>' +
+				numberList.map(function(x) {
+					return '<option value=' + x + '>' + x + '</option>';
 				}) +
-				'</ul>';
+				'</select> at '
+			: '';
 
-			tags = tags.replace(/,/g, '');
-
-			var numberList = getArrayOfNumbers(50);
-
-			var quantity = crop.stocked
-				? "<select class='crop-selector' name=" +
-					crop.id +
-					'>' +
-					numberList.map(function(x) {
-						return '<option value=' + x + '>' + x + '</option>';
-					}) +
-					'</select> at '
-				: '';
-
-			container.innerHTML +=
-				"<div class='card'><div class='price-tag'>" +
-				quantity +
-				' $' +
-				crop['price'] +
-				"<small>/pound</small></div><img src='" +
-				crop['img'] +
-				"'/><div class='inner'><h5>" +
-				crop['title'] +
-				'</h5><p>' +
-				crop['description'] +
-				tags +
-				'</div></div>';
-		});
+		container.innerHTML +=
+			"<div class='card'><div class='price-tag'>" +
+			quantity +
+			' $' +
+			veggie['price'] +
+			"<small>/pound</small></div><img src='" +
+			veggie['img'] +
+			"'/><div class='inner'><h5>" +
+			veggie['title'] +
+			'</h5><p>' +
+			veggie['description'] +
+			tags +
+			'</div></div>';
 	});
 }
 

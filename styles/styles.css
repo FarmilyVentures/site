@@ -76,6 +76,10 @@ h4 {
 	margin: 0 auto;
 }
 
+.inner-container.wide {
+	max-width: 1200px;
+}
+
 .divider {
 	height: 2px;
 	background-color: #5ecc62;
@@ -586,7 +590,6 @@ footer {
 #farm .inner-container .info a.button {
 	color: white;
 }
-
 
 #farm .inner-container .info ul {
 	margin-bottom: 16px;

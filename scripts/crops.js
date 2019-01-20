@@ -1,5 +1,25 @@
-function getVeggies() {
-	return [
+function shuffle(array) {
+	var currentIndex = array.length,
+		temporaryValue,
+		randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+}
+
+function getVeggies(rand) {
+	const veggies = [
 		{
 			price: '3.00',
 			title: 'Kale',
@@ -13,7 +33,7 @@ function getVeggies() {
 			],
 			id: 'kale',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '3.00',
@@ -29,7 +49,7 @@ function getVeggies() {
 			],
 			id: 'eggplant',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '3.00',
@@ -44,8 +64,8 @@ function getVeggies() {
 				'smoothies',
 			],
 			id: 'chard',
-			stocked: true,
-			round: 1,
+			stocked: false,
+			limited: false,
 		},
 		{
 			price: '2.50',
@@ -60,7 +80,7 @@ function getVeggies() {
 			],
 			id: 'arugala',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '3.00',
@@ -75,7 +95,7 @@ function getVeggies() {
 			],
 			id: 'beets',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '2.50',
@@ -92,7 +112,7 @@ function getVeggies() {
 			],
 			id: 'spinach',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '3.00',
@@ -107,7 +127,7 @@ function getVeggies() {
 			],
 			id: 'collards',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '3.00',
@@ -123,7 +143,7 @@ function getVeggies() {
 			],
 			id: 'radish',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '2.50',
@@ -138,7 +158,7 @@ function getVeggies() {
 			],
 			id: 'lettuce',
 			stocked: true,
-			round: 1,
+			limited: false,
 		},
 		{
 			price: '2.50',
@@ -153,7 +173,22 @@ function getVeggies() {
 			],
 			id: 'bokchoy',
 			stocked: true,
-			round: 1,
+			limited: false,
+		},
+		{
+			price: '2.50',
+			title: 'Rainbow Carrots',
+			description:
+				'Carrots are often claimed to only be starchy tubers with no health benefits, but this could not be further from true! Carrots provide a large quantity of Vitamin A, which helps to improve vision, cellular growth and repair. Carrots do so much more, including preventing cancer, slowing aging and aiding full body cleansing',
+			img: './img/crops/carrot.png',
+			tags: [
+				'stirfrys',
+				'smoothies',
+				'juices',
+			],
+			id: 'carrot',
+			stocked: true,
+			limited: false,
 		},
 		{
 			price: '1.50',
@@ -170,7 +205,7 @@ function getVeggies() {
 			],
 			id: '',
 			stocked: false,
-			round: 2,
+			limited: false,
 		},
 		{
 			price: '5.00',
@@ -186,20 +221,25 @@ function getVeggies() {
 			],
 			id: '',
 			stocked: false,
-			round: 2,
+			limited: false,
 		},
+
 		{
-			price: '0.00',
-			title: 'Your Dream Item',
+			price: '3.00',
+			title: 'Cilantro',
 			description:
-				'North Shore Agricultural Lands of Oahu are especially fertile. We are interested in cultivating fast growing crops that thrive in Hardiness Zone 12B, or transplantable fruit trees 1-3 years in age. Let us know if you have ideas!',
-			img: './img/crops/dream.jpg',
+				'Rich orange attractive stems and savoyed leaves, Orange Ribbed Swiss Chard is known for its exceptional levels of dietary fiber, Vitamin A, K, Iron and antioxidants while defending against cancer, improving cognitive function and cleansing blood circulation.',
+			img: './img/crops/chard.jpg',
 			tags: [
-				'anything',
+				'sauteed',
+				'salads',
+				'bakes',
+				'smoothies',
 			],
-			id: '',
+			id: 'chard',
 			stocked: false,
-			round: 2,
+			limited: true,
 		},
 	];
+	return rand ? shuffle(veggies) : veggies;
 }

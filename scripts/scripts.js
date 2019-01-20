@@ -167,14 +167,20 @@ function removeEmpties(obj) {
 }
 
 function loadVeggieTicker() {
-	var veggies = getVeggies();
+	var veggies = getVeggies(true);
 	var tickerContainer = document.getElementById('veggie-ticker');
 
-	veggies.filter(function(veggie){ return veggie.round === 1}).map(function(veggie) {
-		console.log(veggie);
-		tickerContainer.innerHTML +=
-			"<a href='./sale.html' class='ticker-card' style='background: url(img/crops/"  + veggie.id + ".jpg); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;'><h3>" +
-			veggie.title +
-			'</h3></a>';
-	});
+	veggies
+		.filter(function(veggie) {
+			return veggie.stocked;
+		})
+		.map(function(veggie) {
+			console.log(veggie);
+			tickerContainer.innerHTML +=
+				"<a href='./sale.html' class='ticker-card' style='background: url(img/crops/" +
+				veggie.id +
+				".jpg); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;'><h3>" +
+				veggie.title +
+				'</h3></a>';
+		});
 }
