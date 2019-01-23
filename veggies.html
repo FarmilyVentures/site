@@ -33,36 +33,27 @@
     </div>
     <span id="total-order-amount"></span>
   </div>
-
-  <div class="intro presale">
-    <h3>Alohawai Superfood Market</h3>
-    <p>The finest locally organic superfoods on Oahu.</p>
-  </div>
-
+  
   <div class="info">
     <div class="inner-container wide">
       <section>
-        <h4 class="section-heading center">Support Our Grand Opening!</h4>
-        <div class="divider center"></div>
-        <p>
-          As Alohawai Farm, we have begun to till the ground with our Mana,
-          using sustainable organic practices, and expect harvest for initial produce in mid to late January. Things
-          will proceed rapidly after this as we're already seeing exciting growth
-          of our organic seeds. After this, we hope to increase our supply of
-          existing crops, and add new crops to our inventory. Thank you for
-          making it this far and considering buying <strong>local</strong>,
-          <strong>organic</strong>, <strong>superfoods</strong> from Alohawai
-          Farm.
-        </p>
-        <div id="toolbar">
-          <span class="card-size">
-            <button class="toggle-card-size active" data-size="big">
-              <i class="fas fa-image"></i>
-            </button>
-            <button class="toggle-card-size" data-size="small">
-              <i class="fas fa-list-alt"></i>
-            </button>
-          </span>
+        <div class="options" style="max-width: 1000px; margin: 0 auto">
+            <h4 class="section-heading center">Support Local Organic Agriculture</h4>
+            <div class="divider center"></div>
+            <p>
+              At Alohawai Farm, we care for your superfoods from planting to harvest, and ensure the highest of quality. Please take a look at pre-packaged recommendations, feel free to customize your order, and fill out the form below to complete your purchase. Thank you for your support!
+            </p>
+            <ul class="box-options"></ul>
+            <div id="toolbar">
+                <span class="card-size">
+                  <button class="toggle-card-size active" data-size="big">
+                    <i class="fas fa-image"></i>
+                  </button>
+                  <button class="toggle-card-size" data-size="small">
+                    <i class="fas fa-list-alt"></i>
+                  </button>
+                </span>
+              </div>
         </div>
         <h5 class="center">Currently In Stock</h5>
         <div class="divider center small"></div>
@@ -77,125 +68,127 @@
           us know when you fill out the preorder form ;)
         </p>
       </section>
-      <section id="form" class="inner-container">
-        <h4 class="section-heading center">Order Form</h4>
-        <p>
-          Please read the <strong>Important Notices</strong>, complete the
-          form and submit your veggie box order! Thank you for considering
-          business with Alohawai Farm, your local source for organic fresh
-          superfoods.
-        </p>
-        <h5 class="center">Important Notices</h5>
-        <div class="divider center small"></div>
-        <ul>
-          <li>Free delivery on orders over $25.</li>
-          <li>
-            We only offer pickup and delivery for the island of Oahu, Hawaii
-            at the current time.
-          </li>
-          <li>Accepted payment methods include cash, Venmo, or any <a href="https://www.coinbase.com/join/529642cd0133706fc9000a5a"
-              target="_blank">cryptocurrency available at Coinbase</a>.</li>
-        </ul>
-        <h5 id="checkout" class="center">Shopping Cart</h5>
-        <div class="divider center small"></div>
-        <p>
-          Please verify and make changes below before submitting your order.
-        </p>
-        <ul id="shopping-cart"></ul>
-        <div class="divider center small"></div>
-        <form action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer" method="POST" id="order-form">
-          <div style="display:none;">
-            <label>Keep this field blank</label>
-            <input type="text" name="honeypot" id="honeypot" />
-          </div>
-
-          <label>
-            Full Name:
-            <input name="contact" type="text" required autocomplete="name" />
-          </label>
-
-          <label>
-            Email:
-            <input name="from" type="email" required autocomplete="email" />
-          </label>
-
-          <label>
-            Street Address:
-            <input name="addrOne" type="text" required autocomplete="address-line1" />
-          </label>
-
-          <label>
-            <input name="addrTwo" type="text" autocomplete="address-line2" />
-          </label>
-
-          <div class="inline-form-section">
-            <label>City:
-              <input name="city" type="text" autocomplete="address-level1" /></label>
-            <label>State:
-              <input name="state" type="text" autocomplete="address-level2" /></label>
-            <label>Zip Code:
-              <input name="zip" type="number" autocomplete="postal-code" /></label>
-          </div>
-
-          <label>
-            Phone Number:
-            <input name="tel" type="tel" required autocomplete="tel" />
-          </label>
-
-          <label class="small">
-            How Often Do You Want Your Veggie Box?
-            <select name="frequency" id="consultTopic" required>
-              <option value="once">One Time</option>
-              <option value="weekly">Weekly</option>
-              <option value="twice-weekly">Twice Weekly</option>
-              <option value="bi-weekly">Every Other Week</option>
-              <option value="monthly">Once Monthly</option>
-              <option value="other">Other (Please describe)</option>
-            </select>
-          </label>
-
-          <label>
-            Preferred Method of Payment
-            <select onchange="handlePaymentChoice(this)" name="payment" id="paymentChoice" required>
-              <option value="cash">Cash</option>
-              <option value="venmo">Venmo</option>
-              <option value="crypto">Cryptocurrency</option>
-            </select>
-            <span style="margin-bottom: 8px;font-size: 14px" class="success" id="form-payment-notification"></span>
-          </label>
-
-          <label>
-            Optional: How'd You Find Us?
-            <select name="source" id="sourceChoice" required>
-              <option value="fb" disabled selected>We would love to know!</option>
-              <option value="fb">Facebook</option>
-              <option value="ig">Instagram</option>
-              <option value="word">Word of Mouth</option>
-              <option value="flyer">Flyer</option>
-              <option value="search">Google/Other Search Engine</option>
-              <option value="other">Other (Details below please!)</option>
-            </select>
-          </label>
-
-          <label>
-            Details:
-            <textarea name="body" placeholder="Details, feedback, questions, ideas, and more here." required style="height: 100px"
-              autocomplete=""></textarea>
-          </label>
-          <label style="display: flex; align-items: center; justify-content: flex-start; margin: 0 0 16px 0;">
-            <input style="width: auto; top: 4px; position: relative; margin-right: 8px" type="checkbox" name="terms"
-              required />
-            <span style="font-size: 80%">I've read the <strong>Important Notices</strong> and agree to
-              these terms.</span>
-          </label>
-          <div>
-            <button id="submit-button" class="button"><i class="fas fa-spinner fa-spin"></i>Submit</button>
-            <span id="js-form-response"></span>
-          </div>
-        </form>
-      </section>
     </div>
   </div>
+
+  <div id="order">
+        <div class="inner-container">
+            <h4 class="section-heading center">Order Form</h4>
+            <p>
+              Please read the <strong>Important Notices</strong>, complete the
+              form and submit your veggie box order! Thank you for considering
+              business with Alohawai Farm, your local source for organic fresh
+              superfoods.
+            </p>
+            <h5 class="center">Important Notices</h5>
+            <div class="divider center small"></div>
+            <ul>
+              <li>Free delivery island wide on orders over $10.</li>
+              <li>
+                Oahu, Hawaii residents only (for now!)
+              </li>
+              <li>Accepted payment methods include cash, Venmo, or any <a href="https://www.coinbase.com/join/529642cd0133706fc9000a5a"
+                  target="_blank">cryptocurrency available at Coinbase</a>.</li>
+            </ul>
+            <h5 id="checkout" class="center">Shopping Cart</h5>
+            <div class="divider center small"></div>
+            <p>
+              Please verify and make changes below before submitting your order.
+            </p>
+            <ul id="shopping-cart"></ul>
+            <div class="divider center small"></div>
+            <form action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer" method="POST" id="order-form">
+              <div style="display:none;">
+                <label>Keep this field blank</label>
+                <input type="text" name="honeypot" id="honeypot" />
+              </div>
+    
+              <label>
+                Full Name:
+                <input name="contact" type="text" required autocomplete="name" />
+              </label>
+    
+              <label>
+                Email:
+                <input name="from" type="email" required autocomplete="email" />
+              </label>
+    
+              <label class="show-delivery">
+                Street Address:
+                <input name="addrOne" type="text" required autocomplete="address-line1" />
+              </label>
+    
+              <label class="show-delivery">
+                <input name="addrTwo" type="text" autocomplete="address-line2" />
+              </label>
+    
+              <div class="inline-form-section show-delivery">
+                <label>City:
+                  <input name="city" type="text" autocomplete="address-level1" /></label>
+                <label>State:
+                  <input name="state" type="text" autocomplete="address-level2" /></label>
+                <label>Zip Code:
+                  <input name="zip" type="number" autocomplete="postal-code" /></label>
+              </div>
+    
+              <label>
+                Phone Number:
+                <input name="tel" type="tel" required autocomplete="tel" />
+              </label>
+    
+              <label class="small">
+                How Often Do You Want Your Veggie Box?
+                <select name="frequency" id="consultTopic" required>
+                  <option value="once">One Time</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twice-weekly">Twice Weekly</option>
+                  <option value="bi-weekly">Every Other Week</option>
+                  <option value="monthly">Once Monthly</option>
+                  <option value="other">Other (Please describe)</option>
+                </select>
+              </label>
+    
+              <label>
+                Preferred Method of Payment
+                <select onchange="handlePaymentChoice(this)" name="payment" id="paymentChoice" required>
+                  <option value="cash">Cash</option>
+                  <option value="venmo">Venmo</option>
+                  <option value="crypto">Cryptocurrency</option>
+                </select>
+                <span style="margin-bottom: 8px;font-size: 14px" id="form-payment-notification"></span>
+              </label>
+    
+              <label>
+                Optional: How'd You Find Us?
+                <select name="source" id="sourceChoice" required>
+                  <option value="fb" disabled selected>We would love to know!</option>
+                  <option value="fb">Facebook</option>
+                  <option value="ig">Instagram</option>
+                  <option value="word">Word of Mouth</option>
+                  <option value="flyer">Flyer</option>
+                  <option value="search">Google/Other Search Engine</option>
+                  <option value="other">Other (Details below please!)</option>
+                </select>
+              </label>
+    
+              <label>
+                Details:
+                <textarea name="body" placeholder="Details, feedback, questions, ideas, and more here." required style="height: 100px"
+                  autocomplete=""></textarea>
+              </label>
+              <label style="display: flex; align-items: center; justify-content: flex-start; margin: 0 0 16px 0;">
+                <input style="width: auto; top: 4px; position: relative; margin-right: 8px" type="checkbox" name="terms"
+                  required />
+                <span style="font-size: 80%">I've read the <strong>Important Notices</strong> and agree to
+                  these terms.</span>
+              </label>
+              <div>
+                <button id="submit-button" class="button"><i class="fas fa-spinner fa-spin"></i>Submit</button>
+                <span id="js-form-response"></span>
+              </div>
+            </form>
+        </div>
+      </div>
 
   <footer>
     <p>
