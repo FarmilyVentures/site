@@ -81,7 +81,7 @@
 }
 
 .intro.presale {
-	height: 50vh;
+	height: 60vh;
 	background: url("../img/collards-bg.jpg") no-repeat center center fixed;
 	overflow-y: scroll;
 }
@@ -92,17 +92,9 @@
 
 .info {
 	text-align: center;
-}
-
-.info {
 	color: white;
 	padding: 12px 8px;
 	background: rgb(47, 50, 58);
-}
-
-.info h2 {
-	font-size: 36px;
-	margin: 24px 0;
 }
 
 .info a {
@@ -131,6 +123,11 @@ form {
 #order form {
 	margin: 0 auto;
 	width: 100%;
+}
+
+#order form .button:hover {
+	color: #353a47;
+	border-color: #353a47;
 }
 
 #order form .button i {
@@ -280,7 +277,7 @@ form {
 	}
 
 	h2 {
-		font-size: 48px;
+		font-size: 24px;
 		margin: 0;
 	}
 
