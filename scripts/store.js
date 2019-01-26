@@ -38,6 +38,7 @@ function setEventListeners() {
 
 function handlePaymentChoice(a) {
 	var choiceMap = {
+		check: 'Accepted on pickup only!',
 		venmo:
 			'Please enter your valid Venmo Username in the Details section below!',
 		crypto:
@@ -63,7 +64,9 @@ function handleOrder(e) {
 	// Prepare data to send
 	let data = {
 		cart,
+		price: getTotalPrice(cart),
 	};
+
 	const formElements = Array.from(form);
 
 	formElements.map(function(input) {
@@ -130,63 +133,50 @@ function removeEmpties(obj) {
 }
 
 function populateVeggieList() {
-	var firstRoundCards = document.getElementById('firstRoundCards');
-	var futureRoundCards = document.getElementById('futureRoundCards');
+	var veggies = getVeggies(true);
 
-	var veggies = getVeggies();
+	veggies.map(function(veggie) {
+		const container = document.getElementById(
+			veggie.stocked ? 'stocked' : 'future',
+		);
 
-	var cropCardsMap = {
-		firstRoundCards: veggies.filter(function(veggie) {
-			return veggie.round === 1;
-		}),
-		futureRoundCards: veggies.filter(function(veggie) {
-			return veggie.round === 2;
-		}),
-	};
+		var tags =
+			"<ul class='tag-list'>" +
+			veggie['tags'].map(function(tag) {
+				var cname = tag.replace(' ', '-');
+				return "<li class='tag " + cname + "'>" + tag + '</li>';
+			}) +
+			'</ul>';
 
-	var cardContainers = [
-		firstRoundCards,
-		futureRoundCards,
-	];
+		tags = tags.replace(/,/g, '');
 
-	cardContainers.map(function(container) {
-		cropCardsMap[container.id].map(function(crop) {
-			var tags =
-				"<ul class='tag-list'>" +
-				crop['tags'].map(function(tag) {
-					var cname = tag.replace(' ', '-');
-					return "<li class='tag " + cname + "'>" + tag + '</li>';
+		var numberList = getArrayOfNumbers(50);
+
+		var quantity = veggie.stocked
+			? "<select class='crop-selector' name=" +
+				veggie.id +
+				'>' +
+				numberList.map(function(x) {
+					return '<option value=' + x + '>' + x + '</option>';
 				}) +
-				'</ul>';
+				'</select> at '
+			: '';
 
-			tags = tags.replace(/,/g, '');
-
-			var numberList = getArrayOfNumbers(50);
-
-			var quantity = crop.stocked
-				? "<select class='crop-selector' name=" +
-					crop.id +
-					'>' +
-					numberList.map(function(x) {
-						return '<option value=' + x + '>' + x + '</option>';
-					}) +
-					'</select> at '
-				: '';
-
-			container.innerHTML +=
-				"<div class='card'><div class='price-tag'>" +
-				quantity +
-				' $' +
-				crop['price'] +
-				"<small>/pound</small></div><img src='" +
-				crop['img'] +
-				"'/><div class='inner'><h5>" +
-				crop['title'] +
-				'</h5><p>' +
-				crop['description'] +
-				tags +
-				'</div></div>';
-		});
+		container.innerHTML +=
+			"<div class='card'><div class='price-tag'>" +
+			quantity +
+			' $' +
+			veggie['price'] +
+			'<small> per ' +
+			veggie.measurement +
+			"</small></div><img src='" +
+			veggie['img'] +
+			"'/><div class='inner'><h3>" +
+			veggie['title'] +
+			'</h3><p>' +
+			veggie['description'] +
+			tags +
+			'</div></div>';
 	});
 }
 
@@ -224,6 +214,7 @@ function renderShoppingCartItem(item, quantity) {
 	var selected = function(x) {
 		return x === parseInt(quantity) ? 'selected' : '';
 	};
+
 	var cssID = 'cart-item-' + item;
 
 	var veggie = getVeggieById(item);
@@ -279,8 +270,7 @@ function getShoppingCart() {
 	return cart;
 }
 
-function updateTotalPrice() {
-	const cart = getShoppingCart();
+function getTotalPrice(cart) {
 	const price = cart.map(function(item) {
 		return parseFloat(item.price) * parseFloat(item.value);
 	});
@@ -290,6 +280,11 @@ function updateTotalPrice() {
 	for (var i = 0; i < price.length; i++) {
 		sum += price[i];
 	}
+	return sum;
+}
+
+function updateTotalPrice() {
+	const sum = getTotalPrice(getShoppingCart());
 
 	document.getElementById('total-order-amount').innerHTML = 'Total: $' + sum;
 }
