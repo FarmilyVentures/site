@@ -81,7 +81,7 @@
 }
 
 .intro.presale {
-	height: 50vh;
+	height: 60vh;
 	background: url("../img/collards-bg.jpg") no-repeat center center fixed;
 	overflow-y: scroll;
 }
@@ -131,6 +131,11 @@ form {
 #order form {
 	margin: 0 auto;
 	width: 100%;
+}
+
+#order form .button:hover {
+	color: #353a47;
+	border-color: #353a47;
 }
 
 #order form .button i {
