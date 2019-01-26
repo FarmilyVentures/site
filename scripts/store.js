@@ -64,7 +64,9 @@ function handleOrder(e) {
 	// Prepare data to send
 	let data = {
 		cart,
+		price: getTotalPrice(cart),
 	};
+
 	const formElements = Array.from(form);
 
 	formElements.map(function(input) {
@@ -212,6 +214,7 @@ function renderShoppingCartItem(item, quantity) {
 	var selected = function(x) {
 		return x === parseInt(quantity) ? 'selected' : '';
 	};
+
 	var cssID = 'cart-item-' + item;
 
 	var veggie = getVeggieById(item);
@@ -267,8 +270,7 @@ function getShoppingCart() {
 	return cart;
 }
 
-function updateTotalPrice() {
-	const cart = getShoppingCart();
+function getTotalPrice(cart) {
 	const price = cart.map(function(item) {
 		return parseFloat(item.price) * parseFloat(item.value);
 	});
@@ -278,6 +280,11 @@ function updateTotalPrice() {
 	for (var i = 0; i < price.length; i++) {
 		sum += price[i];
 	}
+	return sum;
+}
+
+function updateTotalPrice() {
+	const sum = getTotalPrice(getShoppingCart());
 
 	document.getElementById('total-order-amount').innerHTML = 'Total: $' + sum;
 }
