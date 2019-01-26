@@ -34,6 +34,7 @@ function getVeggies(rand) {
 			id: 'kale',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '3.00',
@@ -50,6 +51,7 @@ function getVeggies(rand) {
 			id: 'eggplant',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '3.00',
@@ -66,6 +68,7 @@ function getVeggies(rand) {
 			id: 'chard',
 			stocked: false,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '2.50',
@@ -81,6 +84,7 @@ function getVeggies(rand) {
 			id: 'arugala',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '3.00',
@@ -96,6 +100,7 @@ function getVeggies(rand) {
 			id: 'beets',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '2.50',
@@ -113,6 +118,7 @@ function getVeggies(rand) {
 			id: 'spinach',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '3.00',
@@ -128,6 +134,7 @@ function getVeggies(rand) {
 			id: 'collards',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '3.00',
@@ -144,6 +151,7 @@ function getVeggies(rand) {
 			id: 'radish',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '2.50',
@@ -159,6 +167,7 @@ function getVeggies(rand) {
 			id: 'lettuce',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '2.50',
@@ -174,6 +183,7 @@ function getVeggies(rand) {
 			id: 'bokchoy',
 			stocked: true,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '2.50',
@@ -189,6 +199,7 @@ function getVeggies(rand) {
 			id: 'carrot',
 			stocked: false,
 			limited: false,
+			measurement: 'bunch',
 		},
 		{
 			price: '1.50',
@@ -206,6 +217,7 @@ function getVeggies(rand) {
 			id: '',
 			stocked: false,
 			limited: false,
+			measurement: 'pound',
 		},
 		{
 			price: '5.00',
@@ -222,6 +234,7 @@ function getVeggies(rand) {
 			id: '',
 			stocked: false,
 			limited: false,
+			measurement: 'pound',
 		},
 
 		{
@@ -238,6 +251,7 @@ function getVeggies(rand) {
 			id: 'cilantro',
 			stocked: false,
 			limited: true,
+			measurement: 'bunch',
 		},
 	];
 	return rand ? shuffle(veggies) : veggies;

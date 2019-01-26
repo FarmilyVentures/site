@@ -165,7 +165,9 @@ function populateVeggieList() {
 			quantity +
 			' $' +
 			veggie['price'] +
-			"<small>/bunch</small></div><img src='" +
+			'<small> per ' +
+			veggie.measurement +
+			"</small></div><img src='" +
 			veggie['img'] +
 			"'/><div class='inner'><h3>" +
 			veggie['title'] +
