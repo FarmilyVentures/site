@@ -115,10 +115,6 @@
 	width: 100%;
 }
 
-#order .show-delivery {
-	display: none;
-}
-
 #order ul,
 form {
 	text-align: left;

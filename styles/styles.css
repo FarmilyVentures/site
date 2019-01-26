@@ -249,7 +249,7 @@ form .inline-form-section label:last-of-type {
 
 .header {
 	position: absolute;
-	padding: 24px;
+	padding: 12px 24px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -298,6 +298,9 @@ form .inline-form-section label:last-of-type {
 }
 
 @media (min-width: 768px) {
+	.header {
+		background-color: rgba(0, 0, 0, 0.25);
+	}
 	.header ul {
 		display: inherit;
 	}
@@ -326,7 +329,7 @@ form .inline-form-section label:last-of-type {
 
 .intro {
 	height: 100vh;
-	background: url("../img/Untitled.jpg") no-repeat center center fixed;
+	background: url("../img/radish-bg.jpg") no-repeat center center fixed;
 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -339,33 +342,13 @@ form .inline-form-section label:last-of-type {
 	flex-direction: column;
 
 	color: white;
-	padding: 16px;
+	padding: 8px;
 
 	text-align: center;
 }
 
-.intro.presale {
-	height: 60vh;
-	background: url("../img/sexykale.jpg") no-repeat center center fixed;
-	overflow-y: scroll;
-}
-
-.intro h3,
-#about .description h3 {
-	padding: 0;
-	margin: 8px 8px 8px 8px;
-	letter-spacing: 8px;
-	text-align: center;
-	line-height: 48px;
-	font-size: 48px;
-}
-
-@media (min-width: 768px) {
-	.intro h3 #about .description h3 {
-		line-height: 36px;
-		font-size: 80px;
-		margin-bottom: 24px;
-	}
+.intro h2 {
+	margin-top: -24px;
 }
 
 .intro .button-container {
@@ -388,10 +371,6 @@ form .inline-form-section label:last-of-type {
 	flex-direction: row;
 }
 
-.button-container .button:first-of-type {
-	margin-left: 0;
-}
-
 @media (min-width: 768px) {
 	.button-container {
 		justify-content: flex-start;
@@ -408,7 +387,7 @@ form .inline-form-section label:last-of-type {
 
 .button {
 	padding: 8px 16px;
-	margin: 8px;
+	margin: 4px;
 	border-width: 1px !important;
 	border: 1px solid white;
 	border-radius: 24px;
@@ -418,26 +397,27 @@ form .inline-form-section label:last-of-type {
 	font-weight: 300 !important;
 }
 
+.button:hover {
+	cursor: pointer;
+	color: #5ecc62;
+	border-color: #5ecc62;
+}
+
 @media (min-width: 768px) {
 	.button.inline {
 		font-size: 28px !important;
 	}
 }
 
-.button.gold-baby {
-	color: silver;
-	border-color: silver;
+.button.secondary {
+	background: rgba(255, 255, 255, 0.9);
+	border-color: white;
+	color: #353a47;
 }
 
-.button.gold-baby:hover {
-	color: #ffd700;
-	border-color: #ffd700;
-}
-
-.button:hover {
-	cursor: pointer;
-	color: #5ecc62;
-	border-color: #5ecc62;
+.button.secondary:hover {
+	color: #007bff;
+	border-color: #007bff;
 }
 
 .button.primary {
