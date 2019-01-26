@@ -19,7 +19,7 @@
   <nav class="header no-hide" id="customHeader">
     <ul>
       <li>
-        <a href="./index.html"><i class="fas fa-home"></i></a>
+        <a href="./index.html">BACK TO MAIN PAGE</a>
       </li>
     </ul>
   </nav>
@@ -33,16 +33,15 @@
     </div>
     <span id="total-order-amount"></span>
   </div>
+
+  <div class="intro presale">
+    <h1>Alohawai Organic Superfood Store</h1>
+  </div>
   
   <div class="info">
     <div class="inner-container wide">
       <section>
-        <div class="options" style="max-width: 1000px; margin: 0 auto">
-            <h4 class="section-heading center">Support Local Organic Agriculture</h4>
-            <div class="divider center"></div>
-            <p>
-              At Alohawai Farm, we care for your superfoods from planting to harvest, and ensure the highest of quality. Please take a look at pre-packaged recommendations, feel free to customize your order, and fill out the form below to complete your purchase. Thank you for your support!
-            </p>
+        <div class="options">
             <ul class="box-options"></ul>
             <div id="toolbar">
                 <span class="card-size">
@@ -55,12 +54,12 @@
                 </span>
               </div>
         </div>
-        <h5 class="center">Currently In Stock</h5>
+        <h2>Currently In Stock</h2>
         <div class="divider center small"></div>
         <div id="stocked" class="card-holder"></div>
       </section>
       <section>
-        <h5 class="center">Out Of Stock (Coming Soon!)</h5>
+        <h2>Out Of Stock (Coming Soon!)</h2>
         <div class="divider center small"></div>
         <div id="future" class="card-holder"></div>
         <p style="text-align: center">
@@ -73,24 +72,18 @@
 
   <div id="order">
         <div class="inner-container">
-            <h4 class="section-heading center">Order Form</h4>
+            <h4>Order Form</h4>
             <p>
               Please read the <strong>Important Notices</strong>, complete the
-              form and submit your veggie box order! Thank you for considering
-              business with Alohawai Farm, your local source for organic fresh
+              form and submit your veggie box order! Thank you for ordering from Alohawai Farm, your local source for organic fresh
               superfoods.
             </p>
-            <h5 class="center">Important Notices</h5>
+            <h2>Important Notices</h2>
             <div class="divider center small"></div>
             <ul>
-              <li>Free delivery island wide on orders over $10.</li>
-              <li>
-                Oahu, Hawaii residents only (for now!)
-              </li>
-              <li>Accepted payment methods include cash, Venmo, or any <a href="https://www.coinbase.com/join/529642cd0133706fc9000a5a"
-                  target="_blank">cryptocurrency available at Coinbase</a>.</li>
+              <li>Free delivery to all of Oahu on orders over $15.</li>
             </ul>
-            <h5 id="checkout" class="center">Shopping Cart</h5>
+            <h2 id="checkout">Shopping Cart</h2>
             <div class="divider center small"></div>
             <p>
               Please verify and make changes below before submitting your order.
@@ -114,32 +107,31 @@
               </label>
     
               <label>
-                Street Address and Oahu Zip Code:
-                <input name="address" placeholder="XXX Farrington 96791" type="text" required />
-              </label>
-    
-              <label>
                 Phone Number:
                 <input name="tel" type="tel" required autocomplete="tel" />
+              </label>
+
+              <label>
+                Street Address and Oahu Zip Code:
+                <input name="address" placeholder="XXX Farrington Road, 96791" type="text" required />
               </label>
     
               <label class="small">
                 How Often Do You Want Your Veggie Box?
                 <select name="frequency" id="consultTopic" required>
                   <option value="once">One Time</option>
-                  <option value="weekly">Weekly</option>
-                  <option value="twice-weekly">Twice Weekly</option>
-                  <option value="bi-weekly">Every Other Week</option>
-                  <option value="monthly">Once Monthly</option>
-                  <option value="other">Other (Please describe)</option>
+                  <option value="weekly" selected>Weekly</option>
+                  <option value="other">Other (Please describe below)</option>
                 </select>
               </label>
     
               <label>
                 Preferred Method of Payment
                 <select onchange="handlePaymentChoice(this)" name="payment" id="paymentChoice" required>
+                  <option selected disabled>Options</option>
                   <option value="cash">Cash</option>
                   <option value="venmo">Venmo</option>
+                  <option value="check">Check</option>
                   <option value="crypto">Cryptocurrency</option>
                 </select>
                 <span style="margin-bottom: 8px;font-size: 14px" id="form-payment-notification"></span>
@@ -148,7 +140,7 @@
               <label>
                 Optional: How'd You Find Us?
                 <select name="source" id="sourceChoice" required>
-                  <option value="fb" disabled selected>We would love to know!</option>
+                  <option disabled selected>We would love to know!</option>
                   <option value="fb">Facebook</option>
                   <option value="ig">Instagram</option>
                   <option value="word">Word of Mouth</option>

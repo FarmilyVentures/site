@@ -38,6 +38,7 @@ function setEventListeners() {
 
 function handlePaymentChoice(a) {
 	var choiceMap = {
+		check: 'Accepted on pickup only!',
 		venmo:
 			'Please enter your valid Venmo Username in the Details section below!',
 		crypto:
@@ -164,11 +165,11 @@ function populateVeggieList() {
 			quantity +
 			' $' +
 			veggie['price'] +
-			"<small>/pound</small></div><img src='" +
+			"<small>/bunch</small></div><img src='" +
 			veggie['img'] +
-			"'/><div class='inner'><h5>" +
+			"'/><div class='inner'><h3>" +
 			veggie['title'] +
-			'</h5><p>' +
+			'</h3><p>' +
 			veggie['description'] +
 			tags +
 			'</div></div>';

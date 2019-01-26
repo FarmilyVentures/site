@@ -180,14 +180,14 @@ function getVeggies(rand) {
 			title: 'Rainbow Carrots',
 			description:
 				'Carrots are often claimed to only be starchy tubers with no health benefits, but this could not be further from true! Carrots provide a large quantity of Vitamin A, which helps to improve vision, cellular growth and repair. Carrots do so much more, including preventing cancer, slowing aging and aiding full body cleansing',
-			img: './img/crops/carrot.png',
+			img: './img/crops/carrot.jpg',
 			tags: [
 				'stirfrys',
 				'smoothies',
 				'juices',
 			],
 			id: 'carrot',
-			stocked: true,
+			stocked: false,
 			limited: false,
 		},
 		{
@@ -229,14 +229,13 @@ function getVeggies(rand) {
 			title: 'Cilantro',
 			description:
 				'Rich orange attractive stems and savoyed leaves, Orange Ribbed Swiss Chard is known for its exceptional levels of dietary fiber, Vitamin A, K, Iron and antioxidants while defending against cancer, improving cognitive function and cleansing blood circulation.',
-			img: './img/crops/chard.jpg',
+			img: './img/crops/cilantro.jpg',
 			tags: [
-				'sauteed',
+				'sauces',
 				'salads',
-				'bakes',
-				'smoothies',
+				'salsa',
 			],
-			id: 'chard',
+			id: 'cilantro',
 			stocked: false,
 			limited: true,
 		},
