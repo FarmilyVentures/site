@@ -1,184 +1,242 @@
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alohawai Farm | Caring for Self, The Land and Ohana.</title>
+    <meta
+      name="description"
+      content="Alohawai Farm operates out of Mokuleia, Oahu, providing fresh, organic and sustainable produce to the individuals, families, vendors and more!"
+    />
+    <meta
+      name="keywords"
+      content="farm, sustainability, organic, local, oahu, mokuleia, northshore, hawaii"
+    />
+    <meta name="author" content="@alohawai.farm" />
+    <meta
+      name="google-site-verification"
+      content="W3WFQYqq-7Im4U-CUH1scS8DD2kyQm9AMOLhYmIlA6c"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?" />
+    <link rel="manifest" href="manifest.json" />
+    <link href="./styles/styles.css" rel="stylesheet" />
+    <link href="./styles/veggies.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>Alohawai Farm | Caring for Self, The Land and Ohana.</title>
-  <meta name="description" content="Alohawai Farm operates out of Mokuleia, Oahu, providing fresh, organic and sustainable produce to the individuals, families, vendors and more!" />
-  <meta name="keywords" content="farm, sustainability, organic, local, oahu, mokuleia, northshore, hawaii" />
-  <meta name="author" content="@alohawai.farm" />
-  <meta name="google-site-verification" content="W3WFQYqq-7Im4U-CUH1scS8DD2kyQm9AMOLhYmIlA6c" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?" />
-  <link rel="manifest" href="manifest.json" />
-  <link href="./styles/styles.css" rel="stylesheet" />
-  <link href="./styles/veggies.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous" />
-</head>
+  <body>
+    <nav class="header no-hide" id="customHeader">
+      <ul>
+        <li>
+          <a href="./index.html">BACK TO MAIN PAGE</a>
+        </li>
+      </ul>
+    </nav>
 
-<body>
-  <nav class="header no-hide" id="customHeader">
-    <ul>
-      <li>
-        <a href="./index.html">BACK TO MAIN PAGE</a>
-      </li>
-    </ul>
-  </nav>
-
-  <div id="follow-cart-container">
-    <div class="shopping-cart-icon">
-      <span id="shopping-cart-count"></span>
-      <a href="#order" class="follow-cart">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-    </div>
-    <span id="total-order-amount"></span>
-  </div>
-
-  <div class="intro presale">
-    <h1>Alohawai Organic Superfood Market</h1>
-  </div>
-  
-  <div class="info">
-    <div class="inner-container wide">
-      <section>
-        <div class="options">
-            <ul class="box-options"></ul>
-            <div id="toolbar">
-                <span class="card-size">
-                  <button class="toggle-card-size active" data-size="big">
-                    <i class="fas fa-image"></i>
-                  </button>
-                  <button class="toggle-card-size" data-size="small">
-                    <i class="fas fa-list-alt"></i>
-                  </button>
-                </span>
-              </div>
-        </div>
-        <h2>Currently In Stock</h2>
-        <div class="divider center small"></div>
-        <div id="stocked" class="card-holder"></div>
-      </section>
-      <section>
-        <h2>Out Of Stock (Coming Soon!)</h2>
-        <div class="divider center small"></div>
-        <div id="future" class="card-holder"></div>
-        <p style="text-align: center">
-          and more! Have a recommendation of what you would like to see? Let
-          us know when you fill out the preorder form ;)
-        </p>
-      </section>
-    </div>
-  </div>
-
-  <div id="order">
-        <div class="inner-container">
-            <h2>Order Form</h2>
-            <p>
-              Please read the <strong>Important Notices</strong>, complete the
-              form and submit your veggie box order! Thank you for ordering from Alohawai Farm, your local source for organic fresh
-              superfoods.
-            </p>
-            <h3>Important Notices</h3>
-            <div class="divider center small"></div>
-            <ul>
-              <li>Free delivery to all of Oahu on orders over $15.</li>
-            </ul>
-            <h3 id="checkout">Shopping Cart</h3>
-            <div class="divider center small"></div>
-            <p>
-              Please verify and make changes below before submitting your order.
-            </p>
-            <ul id="shopping-cart"></ul>
-            <div class="divider center small"></div>
-            <form action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer" method="POST" id="order-form">
-              <div style="display:none;">
-                <label>Keep this field blank</label>
-                <input type="text" name="honeypot" id="honeypot" />
-              </div>
-    
-              <label>
-                Full Name:
-                <input name="contact" type="text" required autocomplete="name" />
-              </label>
-    
-              <label>
-                Email:
-                <input name="from" type="email" required autocomplete="email" />
-              </label>
-    
-              <label>
-                Phone Number:
-                <input name="tel" type="tel" required autocomplete="tel" />
-              </label>
-
-              <label>
-                Street Address and Oahu Zip Code:
-                <input name="address" placeholder="XXX Farrington Road, 96791" type="text" required />
-              </label>
-    
-              <label class="small">
-                How Often Do You Want Your Veggie Box?
-                <select name="frequency" id="consultTopic" required>
-                  <option value="once">One Time</option>
-                  <option value="weekly" selected>Weekly</option>
-                  <option value="other">Other (Please describe below)</option>
-                </select>
-              </label>
-    
-              <label>
-                Preferred Method of Payment
-                <select onchange="handlePaymentChoice(this)" name="payment" id="paymentChoice" required>
-                  <option selected disabled>Options</option>
-                  <option value="cash">Cash</option>
-                  <option value="venmo">Venmo</option>
-                  <option value="check">Check</option>
-                  <option value="crypto">Cryptocurrency</option>
-                </select>
-                <span style="margin-bottom: 8px;font-size: 14px" id="form-payment-notification"></span>
-              </label>
-    
-              <label>
-                Optional: How'd You Find Us?
-                <select name="source" id="sourceChoice" required>
-                  <option disabled selected>We would love to know!</option>
-                  <option value="fb">Facebook</option>
-                  <option value="ig">Instagram</option>
-                  <option value="word">Word of Mouth</option>
-                  <option value="flyer">Flyer</option>
-                  <option value="search">Google/Other Search Engine</option>
-                  <option value="other">Other (Details below please!)</option>
-                </select>
-              </label>
-    
-              <label>
-                Details:
-                <textarea name="body" placeholder="Details, feedback, questions, ideas, and more here." required style="height: 100px"
-                  autocomplete=""></textarea>
-              </label>
-              <label style="display: flex; align-items: center; justify-content: flex-start; margin: 0 0 16px 0;">
-                <input style="width: auto; top: 4px; position: relative; margin-right: 8px" type="checkbox" name="terms"
-                  required />
-                <span style="font-size: 80%">I've read the <strong>Important Notices</strong> and agree to
-                  these terms.</span>
-              </label>
-              <div>
-                <button id="submit-button" class="button"><i class="fas fa-spinner fa-spin"></i>Submit</button>
-                <span id="js-form-response"></span>
-              </div>
-            </form>
-        </div>
+    <div id="follow-cart-container">
+      <div class="shopping-cart-icon">
+        <span id="shopping-cart-count"></span>
+        <a href="#order" class="follow-cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
       </div>
+      <span id="total-order-amount"></span>
+    </div>
 
-  <footer>
-    <p>
-      &#169; Copyright Alohawai Farm 2018, site by
-      <a href="https://awitherow.com" target="_blank">Austin Witherow</a>
-    </p>
-  </footer>
+    <div class="intro presale">
+      <div style="margin: 0 auto; max-width: 900px;">
+        <h1>Alohawai Organic Superfoods</h1>
+        <h2>
+          Customise and order your veggie box below, we even deliver for free!
+        </h2>
+      </div>
+    </div>
 
-  <!-- scripts -->
-  <script type="text/javascript" src="./scripts/crops.js"></script>
-  <script type="text/javascript" src="./scripts/store.js"></script>
-</body>
+    <div class="info">
+      <div class="inner-container wide">
+        <section>
+          <div class="options">
+            <ul class="box-options"></ul>
+            <div id="toolbar" style="margin: 0 auto; max-width: 1080px;">
+              <span class="card-size">
+                <button class="toggle-card-size active" data-size="big">
+                  <i class="fas fa-image"></i>
+                </button>
+                <button class="toggle-card-size" data-size="small">
+                  <i class="fas fa-list-alt"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+          <h2>Currently In Stock</h2>
+          <div class="divider center small"></div>
+          <div id="stocked" class="card-holder"></div>
+        </section>
+        <div style="max-width: 768px; margin: 64px auto;"></div>
+        <section>
+          <h2>Still Growing, Coming Soon to Alohawai Farm!</h2>
+          <div class="divider center small"></div>
+          <div id="future" class="card-holder"></div>
+          <p style="text-align: center">
+            and more! Have a recommendation of what you would like to see? Let
+            us know when you fill out the preorder form ;)
+          </p>
+        </section>
+      </div>
+    </div>
 
+    <div id="order">
+      <div class="inner-container">
+        <h2>Order Form</h2>
+        <p>
+          Please read the <strong>Important Notices</strong>, complete the form
+          and submit your veggie box order! Thank you for ordering from Alohawai
+          Farm, your local source for organic fresh superfoods.
+        </p>
+        <h3>Important Notices</h3>
+        <div class="divider center small"></div>
+        <ul>
+          <li>Free delivery to all of Oahu on orders over $15.</li>
+          <li>
+            Island wide delivery every Thursday, OR Pickup after Yoga Loft Yoga,
+            Breath and Meditation class, Mondays 7:00pm - 8:45pm. If you take
+            the class, you get an
+            <strong>20% Discount as part of the Yoga Loft Ohana</strong> on your
+            vegetable order.
+          </li>
+          <li>Pickup is always an option!</li>
+        </ul>
+        <h3 id="checkout">Shopping Cart</h3>
+        <div class="divider center small"></div>
+        <p>
+          Please verify and make changes below before submitting your order.
+        </p>
+        <ul id="shopping-cart"></ul>
+        <div class="divider center small"></div>
+        <form
+          action="https://aogglay8hi.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer"
+          method="POST"
+          id="order-form"
+        >
+          <div style="display:none;">
+            <label>Keep this field blank</label>
+            <input type="text" name="honeypot" id="honeypot" />
+          </div>
+
+          <label>
+            Full Name:
+            <input name="contact" type="text" required autocomplete="name" />
+          </label>
+
+          <label>
+            Email:
+            <input name="from" type="email" required autocomplete="email" />
+          </label>
+
+          <label>
+            Phone Number:
+            <input name="tel" type="tel" required autocomplete="tel" />
+          </label>
+
+          <label>
+            Street Address and Oahu Zip Code:
+            <input
+              name="address"
+              placeholder="XXX Farrington Road, 96791"
+              type="text"
+              required
+            />
+          </label>
+
+          <label class="small">
+            How Often Do You Want Your Veggie Box?
+            <select name="frequency" id="consultTopic" required>
+              <option value="once">One Time</option>
+              <option value="weekly" selected>Weekly</option>
+              <option value="other">Other (Please describe below)</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred Method of Payment
+            <select
+              onchange="handlePaymentChoice(this)"
+              name="payment"
+              id="paymentChoice"
+              required
+            >
+              <option selected disabled>Options</option>
+              <option value="cash">Cash</option>
+              <option value="venmo">Venmo</option>
+              <option value="check">Check</option>
+              <option value="crypto">Cryptocurrency</option>
+            </select>
+            <span
+              style="margin-bottom: 8px;font-size: 14px"
+              id="form-payment-notification"
+            ></span>
+          </label>
+
+          <label>
+            Optional: How'd You Find Us?
+            <select name="source" id="sourceChoice" required>
+              <option disabled selected>We would love to know!</option>
+              <option value="fb">Facebook</option>
+              <option value="ig">Instagram</option>
+              <option value="word">Word of Mouth</option>
+              <option value="flyer">Flyer</option>
+              <option value="search">Google/Other Search Engine</option>
+              <option value="other">Other (Details below please!)</option>
+            </select>
+          </label>
+
+          <label>
+            Details:
+            <textarea
+              name="body"
+              placeholder="Details, feedback, questions, ideas, and more here."
+              required
+              style="height: 100px"
+              autocomplete=""
+            ></textarea>
+          </label>
+          <label
+            style="display: flex; align-items: center; justify-content: flex-start; margin: 0 0 16px 0;"
+          >
+            <input
+              style="width: auto; top: 4px; position: relative; margin-right: 8px"
+              type="checkbox"
+              name="terms"
+              required
+            />
+            <span style="font-size: 80%"
+              >I've read the <strong>Important Notices</strong> and agree to
+              these terms.</span
+            >
+          </label>
+          <div>
+            <button id="submit-button" class="button">
+              <i class="fas fa-spinner fa-spin"></i>Submit
+            </button>
+            <span id="js-form-response"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &#169; Copyright Alohawai Farm 2018, site by
+        <a href="https://awitherow.com" target="_blank">Austin Witherow</a>
+      </p>
+    </footer>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="./scripts/crops.js"></script>
+    <script type="text/javascript" src="./scripts/store.js"></script>
+  </body>
 </html>
