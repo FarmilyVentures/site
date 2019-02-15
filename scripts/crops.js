@@ -70,13 +70,25 @@ function getVeggies(rand) {
     },
     {
       price: "3.00",
-      title: "Beets",
+      title: "Red Beets",
       description:
         "Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.",
-      img: "./img/crops/beets.jpg",
+      img: "./img/crops/beets_red.jpg",
       tags: ["salads", "juices", "smoothies"],
       id: "beets",
       stocked: true,
+      limited: false,
+      measurement: "bunch",
+    },
+    {
+      price: "3.00",
+      title: "Gold Beets",
+      description:
+        "Strikingly beautiful colors, with excellent sweet flavour, boasting a variety of vitamins and minerals that work in combination to prevent heart disease and cancer, promote DNA healing, as well as regulate heart rate and metabolism.",
+      img: "./img/crops/beets_gold.jpg",
+      tags: ["salads", "juices", "smoothies"],
+      id: "beets",
+      stocked: false,
       limited: false,
       measurement: "bunch",
     },
@@ -176,14 +188,26 @@ function getVeggies(rand) {
       limited: false,
       measurement: "pound",
     },
-
     {
-      price: "3.00",
+      price: "1.50",
       title: "Cilantro",
       description:
         "Traditionally a Mediterranean herb, used in savory dishes worldwide. You either love it, or have strong feelings against it. Perhaps put them aside, or love it deeper, because of its amazing cholestoral lowering properties, essential oil filled leaves, its richness in antioxidants and important vitamins and minerals.",
       img: "./img/crops/cilantro.jpg",
       tags: ["sauces", "salads", "salsa"],
+      id: "cilantro",
+      stocked: false,
+      limited: true,
+      measurement: "bunch",
+    },
+
+    {
+      price: "1.50",
+      title: "Ice Cream Banana",
+      description:
+        "matte sheen when young and warm, canary yellow hue when ripe, boasting delicious ice cream textured banana within when ripe. Its flavor is reminiscent of sweet honey and vanilla custard. Portable, perfect on the go nature snacks, but can bruise easily when ripe!",
+      img: "./img/crops/banana_icecream.jpg",
+      tags: ["desserts", "sauces", "curries", "smoothies"],
       id: "cilantro",
       stocked: false,
       limited: true,
