@@ -22,10 +22,34 @@ function getVeggies(rand) {
   const veggies = [
     {
       price: "3.00",
-      title: "Kale",
+      title: "Dino Kale",
       description:
         "Also known as Dinosaur Kale, highly nutritious dark green rich tender leaves known for its extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>, as well as its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
-      img: "./img/crops/kale.jpg",
+      img: "./img/crops/dino-kale.jpg",
+      tags: ["smoothies", "stirfrys", "salads"],
+      id: "kale",
+      stocked: true,
+      limited: false,
+      measurement: "bunch",
+    },
+    {
+      price: "3.00",
+      title: "Curled Kale Mix",
+      description:
+        "Highly nutritious dark green and purple rich tender leaves known for their extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>, as well as its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
+      img: "./img/crops/curled-kale.jpg",
+      tags: ["smoothies", "stirfrys", "salads"],
+      id: "kale",
+      stocked: true,
+      limited: false,
+      measurement: "bunch",
+    },
+    {
+      price: "3.00",
+      title: "Red Russian Kale",
+      description:
+        "Highly nutritious dark green and purple rich tender leaves known for their extraordinary levels of <strong>antioxidants, Vitmain C and K</strong>, as well as its ability to fight cancer, lower cholestoral and reduce heart disease risk.",
+      img: "./img/crops/red-russian-kale.jpg",
       tags: ["smoothies", "stirfrys", "salads"],
       id: "kale",
       stocked: true,
@@ -200,13 +224,12 @@ function getVeggies(rand) {
       limited: true,
       measurement: "1/2lb bunch",
     },
-
     {
       price: "1.50",
       title: "Ice Cream Banana",
       description:
         "matte sheen when young and warm, canary yellow hue when ripe, boasting delicious ice cream textured banana within when ripe. Its flavor is reminiscent of sweet honey and vanilla custard. Portable, perfect on the go nature snacks, but can bruise easily when ripe!",
-      img: "./img/crops/banana_icecream.jpg",
+      img: "./img/crops/banana.jpg",
       tags: ["desserts", "sauces", "curries", "smoothies"],
       id: "banana",
       stocked: false,
