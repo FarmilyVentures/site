@@ -437,13 +437,13 @@ p .button {
 }
 
 #about {
-  background-color: #353a47;
+  background-color: #5ecc62;
   padding: 8px;
   text-align: center;
 }
 
 #about a {
-  color: #5ecc62;
+  color: #ffd700;
   padding: 2px;
   font-weight: bold;
 }
@@ -461,11 +461,12 @@ p .button {
   padding: 8px;
   margin: 24px auto;
   max-width: 900px;
+  color: #2f323a !important;
 }
 
 #about .description p {
   letter-spacing: 1px;
-  color: white;
+  color: #2f323a !important;
   font-weight: 300;
   line-height: 24px;
   font-size: 17px !important;
@@ -473,7 +474,7 @@ p .button {
 }
 
 #about .description .ps h3 {
-  color: white;
+  color: #2f323a !important;
   margin-top: 24px;
 }
 
