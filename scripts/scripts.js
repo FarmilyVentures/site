@@ -9,7 +9,7 @@
 
 (function runStartupShit() {
   spawnEventListeners();
-  loadVeggieTicker();
+  // loadVeggieTicker();
 })();
 
 //
@@ -172,7 +172,7 @@ function loadVeggieTicker() {
     .map(function(veggie) {
       console.log(veggie);
       tickerContainer.innerHTML +=
-        "<a href='./veggies.html' class='ticker-card' style='background: url(img/crops/" +
+        "<a href='https://hawaii.localorbit.com/sellers/29420#supplierCatalog' class='ticker-card' style='background: url(img/crops/" +
         veggie.id +
         ".jpg); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;'><h3>" +
         veggie.title +
